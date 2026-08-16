@@ -1,3 +1,4 @@
 @import "tailwindcss";
 
 .testimonial-shadow{box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.15);}
+.footer-main{background: url("../img/LMR.png") no-repeat center center /contain;}
