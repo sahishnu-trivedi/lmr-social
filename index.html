@@ -18,10 +18,19 @@
     </style>
 </head>
 <body>
-    <header class="sticky top-0 left-0 bg-primary py-3 z-10">
-        <div class="mx-50">
-            <img src="img/logo-white.png" alt="Logo white" />
+    <header class="sticky top-0 left-0 bg-primary py-3 z-10 grid grid-cols-5 items-center px-50">
+        <div class="col-span-2">
+            <img src="img/logo-white.png" alt="Logo white" class="h-[60px]" />
         </div>
+        <nav class="col-span-3">
+            <ul class="text-white flex items-center justify-between">
+                <li><a href="javascript:void(0)" data-active="true" class="data-[active=true]:border-b border-white pb-1">Home</a></li>
+                <li><a href="javascript:void(0)" data-active="false" class="data-[active=true]:border-b border-white pb-1">About</a></li>
+                <li><a href="javascript:void(0)" data-active="false" class="data-[active=true]:border-b border-white pb-1">Services</a></li>
+                <li><a href="javascript:void(0)" data-active="false" class="data-[active=true]:border-b border-white pb-1">Testimonials</a></li>
+                <li><a href="javascript:void(0)" data-active="false" class="data-[active=true]:border-b border-white pb-1">Contact</a></li>
+            </ul>
+        </nav>
     </header>
     <!-- Banner -->
     <section>
@@ -117,8 +126,8 @@
             <details class="group border-b-1 border-grey bg-white overflow-hidden" open>
                 <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none hover:bg-gray-50 transition-colors duration-200">
                 <span>1. Social Media <span class="text-primary"><i>Management</i></span></span>
-                <span class="transition group-open:rotate-180">
-                    <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
+                <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
+                    <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
                     <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </span>
@@ -133,8 +142,24 @@
             <details class="group border-b-1 border-grey rounded-lg bg-white overflow-hidden">
                 <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none hover:bg-gray-50 transition-colors duration-200">
                 <span>Social Media <span class="text-primary"><i>Consulting</i></span></span>
-                <span class="transition group-open:rotate-180">
-                    <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
+                <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
+                    <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </span>
+                </summary>
+                <div class="p-4 text-gray-600 leading-relaxed transition-all ease-in-out">
+                    <p>Social media shouldn’t feel overwhelming - it should feel structured, intentional, and aligned with your business. I manage your platforms end-to-end, including content planning, scheduling and posting. Every decision is guided by strategy, ensuring your content not only looks cohesive but also speaks to the right audience.</p>
+                    <p class="mt-5">I take the time to understand your brand, tone, and goals, then translate that into consistent, high-quality content that builds recognition and trust.</p>
+                </div>
+            </details>
+
+            <!-- Accordion Item 3 -->
+            <details class="group border-b-1 border-grey rounded-lg bg-white overflow-hidden">
+                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none hover:bg-gray-50 transition-colors duration-200">
+                <span>Content <span class="text-primary"><i>Creation</i></span></span>
+                <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
+                    <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
                     <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </span>
@@ -483,7 +508,7 @@
      <footer class="bg-primary py-6">
         <div class="footer-main text-white">
             <div class="grid grid-cols-3 justify-center items-center text-center py-18">
-                <div>
+                <div class="border-e border-white">
                     <h6 class="text-3xl border-b inline-block pb-1 mb-5">Get in Touch</h6>
                     <div>
                         <a href="javascript:void(0)" class="inline-block pe-5">
@@ -503,7 +528,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="border-s border-e border-white px-10 mx-10">
+                <div class="border-e border-white">
                     <img src="img/logo-white.png" alt="Logo" class="inline-block" />
                 </div>
                 <div>
