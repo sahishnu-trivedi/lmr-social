@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Tailwind -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>LMR Social</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="css/main.css">
     <style type="text/tailwindcss">
         @theme {
@@ -17,23 +18,25 @@
         }
     </style>
 </head>
-<body>
-    <header class="sticky top-0 left-0 bg-primary py-3 z-10 grid grid-cols-5 items-center px-50">
-        <div class="col-span-2">
-            <img src="img/logo-white.png" alt="Logo white" class="h-[60px]" />
+<body class="scroll-smooth">
+    <header class="fixed top-8 left-0 z-10 w-full px-10">
+        <div class="bg-primary py-3 grid grid-cols-5 items-center px-30 rounded-[100px]">
+            <div class="col-span-2">
+                <img src="img/logo-white.png" alt="Logo white" class="h-[60px]" />
+            </div>
+            <nav class="col-span-3">
+                <ul class="text-white flex items-center justify-between">
+                    <li><a href="#home" data-active="true" class="nav-link data-[active=true]:border-b border-white pb-1">Home</a></li>
+                    <li><a href="#about" data-active="false" class="nav-link data-[active=true]:border-b border-white pb-1">About</a></li>
+                    <li><a href="#services" data-active="false" class="nav-link data-[active=true]:border-b border-white pb-1">Services</a></li>
+                    <li><a href="#testimonials" data-active="false" class="nav-link data-[active=true]:border-b border-white pb-1">Testimonials</a></li>
+                    <li><a href="#contact" data-active="false" class="nav-link data-[active=true]:border-b border-white pb-1">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav class="col-span-3">
-            <ul class="text-white flex items-center justify-between">
-                <li><a href="javascript:void(0)" data-active="true" class="data-[active=true]:border-b border-white pb-1">Home</a></li>
-                <li><a href="javascript:void(0)" data-active="false" class="data-[active=true]:border-b border-white pb-1">About</a></li>
-                <li><a href="javascript:void(0)" data-active="false" class="data-[active=true]:border-b border-white pb-1">Services</a></li>
-                <li><a href="javascript:void(0)" data-active="false" class="data-[active=true]:border-b border-white pb-1">Testimonials</a></li>
-                <li><a href="javascript:void(0)" data-active="false" class="data-[active=true]:border-b border-white pb-1">Contact</a></li>
-            </ul>
-        </nav>
     </header>
     <!-- Banner -->
-    <section>
+    <section id="home">
         <div class="relative">
             <h1 class="mx-[120px] absolute top-1/2 text-white text-4xl w-2xl">
                 <span>Your audience deserves more than just content , they deserve to be <span class="text-pink">wowed.</span></span>
@@ -49,7 +52,7 @@
     </section>
 
     <!-- My Clients -->
-    <section class="mx-[120px] py-[150px]">
+    <section class="mx-[120px] pt-[150px]">
         <h2 class="text-5xl inline-block border-b-1 border-grey pb-5">My Clients</h2>
         <ul class="list-unstyled grid grid-cols-6 gap-x-20 gap-y-10 items-center mt-10">
             <li>
@@ -92,19 +95,43 @@
     </section>
 
     <!-- Portfolio -->
-     <section class="mx-[120px] py-[150px]">
+     <section class="mx-[120px] pt-[150px]">
         <h2 class="text-5xl inline-block border-b-1 border-grey pb-5">Client Portfolio</h2>
+        <!-- Slider main container -->
+        <div class="swiper mySwiper mt-10">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <img src="img/portfolio/img_1.png" alt="Portfolio Image" />
+            </div>
+            <div class="swiper-slide">
+                <img src="img/portfolio/img_2.png" alt="Portfolio Image" />
+            </div>
+            <div class="swiper-slide">
+                <img src="img/portfolio/img_3.png" alt="Portfolio Image" />
+            </div>
+            <div class="swiper-slide">
+                <img src="img/portfolio/img_4.png" alt="Portfolio Image" />
+            </div>
+            <div class="swiper-slide">
+                <img src="img/portfolio/img_5.png" alt="Portfolio Image" />
+            </div>
+            <div class="swiper-slide">
+                <img src="img/portfolio/img_6.png" alt="Portfolio Image" />
+            </div>
+        </div>
     </section>
 
     <!-- About -->
-    <section class="mx-[120px] py-[150px]">
+    <section id="about" class="mx-[120px] pt-[150px]">
         <h2 class="text-5xl inline-block border-b-1 border-grey pb-5 mb-20">About LMR Socials</h2>
         <p class="text-xl mb-10">Social media is more than just posting content. It's about creating meaningful connections, building trust, and ensuring every piece of content reflects your brand and business goals. That's why I take a strategic approach to everything I do, combining creativity with marketing insight to deliver content that not only looks great but performs.</p>
         <p class="text-xl">At LMR Socials, I pride myself on building genuine relationships with my clients. I take the time to understand your business, your values, and your goals, allowing me to become an extension of your team and create marketing that feels authentic, consistent, and effective.</p>
     </section>
 
     <!-- About Founder -->
-    <section class="bg-primary">
+    <section class="bg-primary mt-[150px]">
         <div class="mx-[120px] py-[150px] grid grid-cols-3 gap-30 text-white">
             <div class="col-span-2">
                 <h2 class="text-5xl inline-block border-b-1 border-grey pb-5 mb-20">About The Founder</h2>
@@ -119,7 +146,7 @@
     </section>
 
     <!-- Offer -->
-     <section class="mx-[120px] py-[150px]">
+     <section id="services" class="mx-[120px] pt-[150px]">
         <h2 class="text-5xl inline-block border-b-1 border-grey pb-5 mb-20">What I Offer</h2>      
         <div class="space-y-2">
             <!-- Accordion Item 1 -->
@@ -137,7 +164,6 @@
                     <p class="mt-5">I take the time to understand your brand, tone, and goals, then translate that into consistent, high-quality content that builds recognition and trust.</p>
                 </div>
             </details>
-
             <!-- Accordion Item 2 -->
             <details class="group border-b-1 border-grey rounded-lg bg-white overflow-hidden">
                 <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none hover:bg-gray-50 transition-colors duration-200">
@@ -153,7 +179,6 @@
                     <p class="mt-5">I take the time to understand your brand, tone, and goals, then translate that into consistent, high-quality content that builds recognition and trust.</p>
                 </div>
             </details>
-
             <!-- Accordion Item 3 -->
             <details class="group border-b-1 border-grey rounded-lg bg-white overflow-hidden">
                 <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none hover:bg-gray-50 transition-colors duration-200">
@@ -169,12 +194,116 @@
                     <p class="mt-5">I take the time to understand your brand, tone, and goals, then translate that into consistent, high-quality content that builds recognition and trust.</p>
                 </div>
             </details>
-
-            </div>
+            <!-- Accordion Item 4 -->
+            <details class="group border-b-1 border-grey rounded-lg bg-white overflow-hidden">
+                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none hover:bg-gray-50 transition-colors duration-200">
+                <span>Professional <span class="text-primary"><i>photography &amp; videography</i></span></span>
+                <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
+                    <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </span>
+                </summary>
+                <div class="p-4 text-gray-600 leading-relaxed transition-all ease-in-out">
+                    <p>Social media shouldn’t feel overwhelming - it should feel structured, intentional, and aligned with your business. I manage your platforms end-to-end, including content planning, scheduling and posting. Every decision is guided by strategy, ensuring your content not only looks cohesive but also speaks to the right audience.</p>
+                    <p class="mt-5">I take the time to understand your brand, tone, and goals, then translate that into consistent, high-quality content that builds recognition and trust.</p>
+                </div>
+            </details>
+            <!-- Accordion Item 5 -->
+            <details class="group border-b-1 border-grey rounded-lg bg-white overflow-hidden">
+                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none hover:bg-gray-50 transition-colors duration-200">
+                <span>Professional <span class="text-primary"><i>drone videography</i></span></span>
+                <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
+                    <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </span>
+                </summary>
+                <div class="p-4 text-gray-600 leading-relaxed transition-all ease-in-out">
+                    <p>Social media shouldn’t feel overwhelming - it should feel structured, intentional, and aligned with your business. I manage your platforms end-to-end, including content planning, scheduling and posting. Every decision is guided by strategy, ensuring your content not only looks cohesive but also speaks to the right audience.</p>
+                    <p class="mt-5">I take the time to understand your brand, tone, and goals, then translate that into consistent, high-quality content that builds recognition and trust.</p>
+                </div>
+            </details>
+            <!-- Accordion Item 6 -->
+            <details class="group border-b-1 border-grey rounded-lg bg-white overflow-hidden">
+                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none hover:bg-gray-50 transition-colors duration-200">
+                <span>Podcast <span class="text-primary"><i>Planning &amp; Production</i></span></span>
+                <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
+                    <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </span>
+                </summary>
+                <div class="p-4 text-gray-600 leading-relaxed transition-all ease-in-out">
+                    <p>Social media shouldn’t feel overwhelming - it should feel structured, intentional, and aligned with your business. I manage your platforms end-to-end, including content planning, scheduling and posting. Every decision is guided by strategy, ensuring your content not only looks cohesive but also speaks to the right audience.</p>
+                    <p class="mt-5">I take the time to understand your brand, tone, and goals, then translate that into consistent, high-quality content that builds recognition and trust.</p>
+                </div>
+            </details>
+            <!-- Accordion Item 7 -->
+            <details class="group border-b-1 border-grey rounded-lg bg-white overflow-hidden">
+                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none hover:bg-gray-50 transition-colors duration-200">
+                <span>Email <span class="text-primary"><i>marketing</i></span></span>
+                <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
+                    <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </span>
+                </summary>
+                <div class="p-4 text-gray-600 leading-relaxed transition-all ease-in-out">
+                    <p>Social media shouldn’t feel overwhelming - it should feel structured, intentional, and aligned with your business. I manage your platforms end-to-end, including content planning, scheduling and posting. Every decision is guided by strategy, ensuring your content not only looks cohesive but also speaks to the right audience.</p>
+                    <p class="mt-5">I take the time to understand your brand, tone, and goals, then translate that into consistent, high-quality content that builds recognition and trust.</p>
+                </div>
+            </details>
+            <!-- Accordion Item 8 -->
+            <details class="group border-b-1 border-grey rounded-lg bg-white overflow-hidden">
+                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none hover:bg-gray-50 transition-colors duration-200">
+                <span>Paid <span class="text-primary"><i>ads management</i></span></span>
+                <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
+                    <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </span>
+                </summary>
+                <div class="p-4 text-gray-600 leading-relaxed transition-all ease-in-out">
+                    <p>Social media shouldn’t feel overwhelming - it should feel structured, intentional, and aligned with your business. I manage your platforms end-to-end, including content planning, scheduling and posting. Every decision is guided by strategy, ensuring your content not only looks cohesive but also speaks to the right audience.</p>
+                    <p class="mt-5">I take the time to understand your brand, tone, and goals, then translate that into consistent, high-quality content that builds recognition and trust.</p>
+                </div>
+            </details>
+            <!-- Accordion Item 9 -->
+            <details class="group border-b-1 border-grey rounded-lg bg-white overflow-hidden">
+                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none hover:bg-gray-50 transition-colors duration-200">
+                <span>Website <span class="text-primary"><i>management</i></span></span>
+                <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
+                    <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </span>
+                </summary>
+                <div class="p-4 text-gray-600 leading-relaxed transition-all ease-in-out">
+                    <p>Social media shouldn’t feel overwhelming - it should feel structured, intentional, and aligned with your business. I manage your platforms end-to-end, including content planning, scheduling and posting. Every decision is guided by strategy, ensuring your content not only looks cohesive but also speaks to the right audience.</p>
+                    <p class="mt-5">I take the time to understand your brand, tone, and goals, then translate that into consistent, high-quality content that builds recognition and trust.</p>
+                </div>
+            </details>
+            <!-- Accordion Item 10 -->
+            <details class="group border-b-1 border-grey rounded-lg bg-white overflow-hidden">
+                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none hover:bg-gray-50 transition-colors duration-200">
+                <span>Branding <span class="text-primary"><i>design</i></span></span>
+                <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
+                    <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </span>
+                </summary>
+                <div class="p-4 text-gray-600 leading-relaxed transition-all ease-in-out">
+                    <p>Social media shouldn’t feel overwhelming - it should feel structured, intentional, and aligned with your business. I manage your platforms end-to-end, including content planning, scheduling and posting. Every decision is guided by strategy, ensuring your content not only looks cohesive but also speaks to the right audience.</p>
+                    <p class="mt-5">I take the time to understand your brand, tone, and goals, then translate that into consistent, high-quality content that builds recognition and trust.</p>
+                </div>
+            </details>
+        </div>
      </section>
 
      <!-- Testimonials -->
-     <section class="mx-[120px] py-[150px]">
+     <section id="testimonials" class="mx-[120px] pt-[150px]">
         <h2 class="text-5xl inline-block border-b-1 border-grey pb-5 mb-20">Client Love</h2>
         <div class="grid grid-cols-3 gap-10">
             <div class="testimonial-block p-10 rounded-xl testimonial-shadow flex justify-between flex-col">
@@ -272,7 +401,7 @@
      </section>
 
      <!-- Getting Started -->
-    <section class="mx-[120px] py-[150px]">
+    <section class="mx-[120px] pt-[150px]">
         <h2 class="text-5xl inline-block border-b-1 border-grey pb-5 mb-20">Getting Started</h2>
         <div class="grid grid-cols-4 gap-10">
             <div class="bg-primary rounded-xl text-white flex items-center content-center relative py-10 px-20">
@@ -307,7 +436,7 @@
     </section>
 
     <!-- Contact -->
-    <section class="mx-[120px] py-[150px]">
+    <section id="contact" class="mx-[120px] pt-[150px]">
         <h2 class="text-5xl inline-block border-b-1 border-grey pb-5 mb-20">Contact</h2>
         <form>
             <div class="grid grid-cols-2 gap-6">
@@ -554,5 +683,30 @@
             <p class="text-center border-t pt-6 mt-6">&copy; 2026 LMR Socials. All Rights Reserved.</p>
         </div>
      </footer>
+
+     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+     <script src="js/main.js"></script>
+     <script>
+        var swiper = new Swiper('.mySwiper', {
+        slidesPerView: 5,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+            delay: 1000,
+        },
+      });
+
+    //   Active nav links
+    var navlinks = document.querySelectorAll('.nav-link')
+
+    navlinks.forEach(link => {
+        link.addEventListener("click", () => {
+            navlinks.forEach(nl => {
+                nl.dataset.active = "false";    
+            })
+            link.dataset.active = "true";
+        })
+    })
+     </script>
 </body>
 </html>
