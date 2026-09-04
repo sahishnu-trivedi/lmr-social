@@ -20,7 +20,7 @@
 </head>
 <body class="scroll-smooth">
     <header class="fixed top-8 left-0 z-10 w-full px-10">
-        <div class="bg-primary py-3 grid grid-cols-5 items-center px-30 rounded-[100px]">
+        <div class="bg-primary xl:py-3 grid grid-cols-5 items-center xl:px-30 px-10 rounded-[100px]">
             <div class="col-span-2">
                 <img src="img/logo-white.png" alt="Logo white" class="h-[60px]" />
             </div>
@@ -38,7 +38,7 @@
     <!-- Banner -->
     <section id="home">
         <div class="relative">
-            <h1 class="mx-[120px] absolute top-[40%] translate-y-[-60%] text-white text-4xl w-2xl">
+            <h1 class="mx-[120px] absolute top-[40%] translate-y-[-60%] text-white xl:text-4xl lg:text-2xl xl:w-2xl">
                 <span>Your audience deserves more than just content , they deserve to be <span class="text-pink"><i>wowed.</i></span></span>
                 <span class="block mt-5">And that’s exactly what I’m here for!</span>
             </h1>
@@ -48,97 +48,163 @@
 
     <!-- Text -->
     <section class="border-b-1 border-grey relative">
-        <div class="mx-[120px] text-center text-5xl py-[150px] mb-3 capitalize">
+        <div class="xl:mx-[120px] text-center text-xl xl:text-5xl lg:text-2xl py-[50px] xl:py-[150px] lg:py-[80px] mb-3 capitalize">
             <h2 class="mb-4">Over 5 billion people use social media worldwide, </h2>
             <h2>Let’s make sure they’re seeing <span class="text-secondary"><i>your business.</i></span></h2>
         </div>
-        <img src="/img/design.png" alt="Design" class="absolute -top-[100px] right-0" />
+        <img src="/img/design.png" alt="Design" class="absolute xl:-top-[100px] right-0 lg:w-1/6 hidden md:inline-block" />
     </section>
 
     <!-- My Clients -->
-    <section class="mx-[120px] pt-[150px]">
-        <h2 class="text-5xl inline-block border-b-1 border-grey pb-5 mb-20">My Clients</h2>
-        <ul class="list-unstyled grid grid-cols-6 gap-x-20 gap-y-10 items-center">
+    <section class="mx-[50px] xl:mx-[120px] pt-[50px] xl:pt-[150px] lg:pt-[80px]">
+        <h2 class="xl:text-5xl lg:text-2xl inline-block border-b-1 border-grey xl:pb-5 xl:mb-20 mb-10">My Clients</h2>
+        <ul class="list-unstyled grid grid-cols-2 xl:grid-cols-6 gap-5 lg:gap-x-20 lg:gap-y-10 items-center hidden">
             <li>
-                <img src="img/clients/logo-birdie.png" alt="Birdie Logo" />
+                <img src="img/clients/logo-birdie.png" alt="Birdie Logo" class="w-1/2" />
             </li>
             <li>
-                <img src="img/clients/logo-strong.png" alt="Strong Logo" />
+                <img src="img/clients/logo-strong.png" alt="Strong Logo" class="w-1/2" />
             </li>
             <li>
-                <img src="img/clients/logo-roadhow.png" alt="Roadhow Logo" />
+                <img src="img/clients/logo-roadhow.png" alt="Roadhow Logo" class="w-1/2" />
             </li>
             <li>
-                <img src="img/clients/logo-mums.png" alt="Midlands Ultrasound & Medical Logo" />
+                <img src="img/clients/logo-mums.png" alt="Midlands Ultrasound & Medical Logo" class="w-1/2" />
             </li>
             <li>
-                <img src="img/clients/logo-bft.png" alt="BFT logo" />
+                <img src="img/clients/logo-bft.png" alt="BFT logo" class="w-1/2" />
             </li>
             <li>
-                <img src="img/clients/logo-vision.png" alt="Vision Logo" />
+                <img src="img/clients/logo-vision.png" alt="Vision Logo" class="w-1/2" />
             </li>
             <li>
-                <img src="img/clients/logo-sbe.png" alt="Samantha Burke Events Logo" />
+                <img src="img/clients/logo-sbe.png" alt="Samantha Burke Events Logo" class="w-1/2" />
             </li>
             <li>
-                <img src="img/clients/logo-skin-ethos.png" alt="Skin Ethos Logo" />
+                <img src="img/clients/logo-skin-ethos.png" alt="Skin Ethos Logo" class="w-1/2" />
             </li>
             <li>
-                <img src="img/clients/logo-fast-print.png" alt="Fast Prints Services Logo" />
+                <img src="img/clients/logo-fast-print.png" alt="Fast Prints Services Logo" class="w-1/2" />
             </li>
             <li>
-                <img src="img/clients/logo-blue-badgers.png" alt="Blue Badgers Logo" />
+                <img src="img/clients/logo-blue-badgers.png" alt="Blue Badgers Logo" class="w-1/2" />
             </li>
             <li>
-                <img src="img/clients/logo-howlong-golf-resort.png" alt="Howlong Golf Resort Logo" />
+                <img src="img/clients/logo-howlong-golf-resort.png" alt="Howlong Golf Resort Logo" class="w-1/2" />
             </li>
             <li>
-                <img src="img/clients/logo-bb-designer-jewellers.png" alt="BB Designer Jewellers Logo" />
+                <img src="img/clients/logo-bb-designer-jewellers.png" alt="BB Designer Jewellers Logo" class="w-1/2" />
             </li>
         </ul>
+         <!-- Slider main container -->
+         <div class="swiper clientSwipper mt-10">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <img src="img/clients/logo-bb-designer-jewellers.png" alt="Portfolio Image" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/clients/logo-bft.png" alt="Portfolio Image" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/clients/logo-birdie.png" alt="Portfolio Image" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/clients/logo-blue-badgers.png" alt="Portfolio Image" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/clients/logo-bmu-organics.png" alt="Portfolio Image" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/clients/logo-fast-print.png" alt="Portfolio Image" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/clients/logo-fernwood.png" alt="Portfolio Image" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/clients/logo-for-u-events.png" alt="Portfolio Image" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/clients/logo-gillian.png" alt="Portfolio Image" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/clients/logo-guest-reality.png" alt="Portfolio Image" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/clients/logo-howlong-golf-resort.png" alt="Portfolio Image" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/clients/logo-mums.png" alt="Portfolio Image" />
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Portfolio -->
-     <section class="mx-[120px] pt-[150px]">
-        <h2 class="text-5xl inline-block border-b-1 border-grey pb-5 mb-20">Client Portfolio</h2>
+     <section class="mx-[50px] xl:mx-[120px] pt-[50px] xl:pt-[150px] lg:pt-[80px]">
+        <h2 class="text-xl xl:text-5xl lg:text-2xl inline-block border-b-1 border-grey xl:pb-5 xl:mb-20 mb-10">Client Portfolio</h2>
         <!-- Slider main container -->
         <div class="swiper mySwiper mt-10">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">
-                <img src="img/portfolio/img_1.png" alt="Portfolio Image" />
-            </div>
-            <div class="swiper-slide">
-                <img src="img/portfolio/img_2.png" alt="Portfolio Image" />
-            </div>
-            <div class="swiper-slide">
-                <img src="img/portfolio/img_3.png" alt="Portfolio Image" />
-            </div>
-            <div class="swiper-slide">
-                <img src="img/portfolio/img_4.png" alt="Portfolio Image" />
-            </div>
-            <div class="swiper-slide">
-                <img src="img/portfolio/img_5.png" alt="Portfolio Image" />
-            </div>
-            <div class="swiper-slide">
-                <img src="img/portfolio/img_6.png" alt="Portfolio Image" />
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <a class="w-full" href="https://www.instagram.com/p/DamsWngms1t/?igsi=amt2djJtZnZ5YWg=" target="_blank">
+                        <img src="img/portfolio/img_1.png" alt="Portfolio Image" />
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a class="w-full" href="https://www.instagram.com/p/Da_1-fOE7b8/?igsi=YnF2NGQxMGM5OHY0" target="_blank">
+                        <img src="img/portfolio/img_2.png" alt="Portfolio Image" />
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a class="w-full" href="https://www.instagram.com/reel/Da2HFpLPd5a/?igsi=bHVucHYzb2doeWVn" target="_blank">
+                        <img src="img/portfolio/img_3.png" alt="Portfolio Image" />
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a class="w-full" href="https://www.instagram.com/reel/DbKXWQzR56M/?igsi=MXR5MnVyaHc1emUyZw==" target="_blank">
+                        <img src="img/portfolio/img_4.png" alt="Portfolio Image" />
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a class="w-full" href="https://www.instagram.com/p/Daziy58kYah/?igsi=bzR6YmcxbXh0M3hs" target="_blank">
+                        <img src="img/portfolio/img_5.png" alt="Portfolio Image" />
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a class="w-full" href="https://www.instagram.com/p/DX-edfuCLB3/?igsi=NzkzaXA5NXV3MjF5" target="_blank">
+                        <img src="img/portfolio/img_6.png" alt="Portfolio Image" />
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a class="w-full" href="https://www.instagram.com/reel/DbLh6JUJhQO/?igsi=MXR5MnVyaHc1emUyZw==" target="_blank">
+                        <img src="img/portfolio/img_7.png" alt="Portfolio Image" />
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a class="w-full" href="https://www.instagram.com/reel/DchcLB4Sl2u/?igsi=MXFrZGI2aGlxdGpveQ==" target="_blank">
+                        <img src="img/portfolio/img_8.png" alt="Portfolio Image" />
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About -->
-    <section id="about" class="mx-[120px] pt-[150px]">
-        <h2 class="text-5xl inline-block border-b-1 border-grey pb-5 mb-20">About LMR Socials</h2>
-        <p class="text-xl mb-10">Social media is more than just posting content. It's about creating meaningful connections, building trust, and ensuring every piece of content reflects your brand and business goals. That's why I take a strategic approach to everything I do, combining creativity with marketing insight to deliver content that not only looks great but performs.</p>
-        <p class="text-xl">At LMR Socials, I pride myself on building genuine relationships with my clients. I take the time to understand your business, your values, and your goals, allowing me to become an extension of your team and create marketing that feels authentic, consistent, and effective.</p>
+    <section id="about" class="mx-[50px] xl:mx-[120px] pt-[50px] xl:pt-[150px] lg:pt-[80px]">
+        <h2 class="text-xl xl:text-5xl lg:text-2xl inline-block border-b-1 border-grey xl:pb-5 xl:mb-20 mb-10">About LMR Socials</h2>
+        <p class="xl:text-xl mb-10">Social media is more than just posting content. It's about creating meaningful connections, building trust, and ensuring every piece of content reflects your brand and business goals. That's why I take a strategic approach to everything I do, combining creativity with marketing insight to deliver content that not only looks great but performs.</p>
+        <p class="xl:text-xl">At LMR Socials, I pride myself on building genuine relationships with my clients. I take the time to understand your business, your values, and your goals, allowing me to become an extension of your team and create marketing that feels authentic, consistent, and effective.</p>
     </section>
 
     <!-- About Founder -->
     <section class="bg-primary mt-[150px]">
-        <div class="mx-[120px] py-[150px] grid grid-cols-3 gap-30 text-white">
+        <div class="mx-[50px] xl:mx-[120px] xl:py-[150px] lg:py-[80px] grid xl:grid-cols-3 xl:gap-30 text-white">
             <div class="col-span-2">
-                <h2 class="text-5xl inline-block border-b-1 border-grey pb-5 mb-20">About The Founder</h2>
+                <h2 class="text-xl xl:text-5xl lg:text-2xl inline-block border-b-1 border-grey xl:pb-5 xl:mb-20 mb-10">About The Founder</h2>
                 <p class="text-xl mb-10">Hi, I'm Lana — Founder and Director of LMR Socials, based in Sydney.</p>
                 <p class="text-xl mb-10">Having worked with businesses across a range of industries and equipped with an International Business BSc, I understand that no two brands are the same. That's why I take a personalised approach to every project, focusing on creating tailored strategies and content that align with each client's goals, audience, and vision.</p>
                 <p class="text-xl">When you work with LMR Socials, you're not just hiring a marketing provider - you're gaining a dedicated partner who genuinely cares about helping your business grow and succeed.</p>
@@ -150,154 +216,154 @@
     </section>
 
     <!-- Offer -->
-     <section id="services" class="mx-[120px] pt-[150px]">
-        <h2 class="text-5xl inline-block border-b-1 border-grey pb-5 mb-20">What I Offer</h2>      
+     <section id="services" class="mx-[50px] xl:mx-[120px] pt-[50px] xl:pt-[150px] lg:pt-[80px]">
+        <h2 class="text-xl xl:text-5xl lg:text-2xl inline-block border-b-1 border-grey xl:pb-5 xl:mb-20 mb-10">What I Offer</h2>      
         <div class="space-y-2">
             <!-- Accordion Item 1 -->
             <details class="group border-b-1 border-grey bg-white overflow-hidden" open>
-                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none hover:bg-gray-50 transition-colors duration-200">
-                <span class="text-5xl">1. Social Media <span class="text-primary accordion-title"><i>Management</i></span></span>
+                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
+                <span class="text-xl xl:text-5xl lg:text-2xl capitalize">1. Social Media <span class="text-primary accordion-title"><i>Management</i></span></span>
                 <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
                     <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
                     <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </span>
                 </summary>
-                <div class="p-4 text-gray-600 leading-relaxed transition-all ease-in-out">
+                <div class="p-4 leading-relaxed transition-all ease-in-out">
                     <p>Social media shouldn’t feel overwhelming - it should feel structured, intentional, and aligned with your business. I manage your platforms end-to-end, including content planning, scheduling and posting. Every decision is guided by strategy, ensuring your content not only looks cohesive but also speaks to the right audience.</p>
                     <p class="mt-5">I take the time to understand your brand, tone, and goals, then translate that into consistent, high-quality content that builds recognition and trust.</p>
                 </div>
             </details>
             <!-- Accordion Item 2 -->
             <details class="group border-b-1 border-grey bg-white overflow-hidden">
-                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none hover:bg-gray-50 transition-colors duration-200">
-                <span class="text-5xl">2. Social Media <span class="text-primary accordion-title"><i>Consulting</i></span></span>
+                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
+                <span class="text-xl xl:text-5xl lg:text-2xl capitalize">2. Social Media <span class="text-primary accordion-title"><i>Consulting</i></span></span>
                 <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
                     <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
                     <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </span>
                 </summary>
-                <div class="p-4 text-gray-600 leading-relaxed transition-all ease-in-out">
+                <div class="p-4 leading-relaxed transition-all ease-in-out">
                     <p>For businesses that prefer to manage their own platforms but need direction, my consulting service provides clarity and structure. I assess your current presence, identify what's working, and highlight opportunities for growth. From content strategy and positioning to posting structure and audience engagement, you will have a clear roadmap to follow.</p>
                     <p class="mt-5">This is a hands-on, practical service designed to leave you feeling confident in your approach. You'll gain a deeper understanding of your audience, your content direction, and how to show up consistently.</p>
                 </div>
             </details>
             <!-- Accordion Item 3 -->
             <details class="group border-b-1 border-grey bg-white overflow-hidden">
-                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none hover:bg-gray-50 transition-colors duration-200">
-                <span class="text-5xl">3. Content <span class="text-primary accordion-title"><i>Creation</i></span></span>
+                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
+                <span class="text-xl xl:text-5xl lg:text-2xl capitalize">3. Content <span class="text-primary accordion-title"><i>Creation</i></span></span>
                 <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
                     <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
                     <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </span>
                 </summary>
-                <div class="p-4 text-gray-600 leading-relaxed transition-all ease-in-out">
+                <div class="p-4 leading-relaxed transition-all ease-in-out">
                     <p>Effective content does more than fill a feed - it tells your story, captures attention, and builds connection with your audience. I create high-quality, on-brand content designed to reflect your business professionally while supporting your wider marketing goals.</p>
                     <p class="mt-5">With my monthly packages, every piece of content is created with purpose, ensuring consistency across your platforms and helping your brand stand out in a crowded digital space.</p>
                 </div>
             </details>
             <!-- Accordion Item 4 -->
             <details class="group border-b-1 border-grey bg-white overflow-hidden">
-                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none hover:bg-gray-50 transition-colors duration-200">
-                <span class="text-5xl">4. Professional <span class="text-primary accordion-title"><i>photography &amp; videography</i></span></span>
+                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
+                <span class="text-xl xl:text-5xl lg:text-2xl capitalize">4. Professional <span class="text-primary accordion-title"><i>photography &amp; videography</i></span></span>
                 <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
                     <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
                     <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </span>
                 </summary>
-                <div class="p-4 text-gray-600 leading-relaxed transition-all ease-in-out">
+                <div class="p-4 leading-relaxed transition-all ease-in-out">
                     <p>Professional visuals are one of the most powerful ways to showcase your business. I capture high-quality photography and video content that highlights your brand in a way that feels authentic, polished, and engaging.</p>
                     <p class="mt-5">Whether for social media, websites, advertising campaigns, or marketing materials, my content is designed to strengthen your brand image and provide you with versatile assets that can be used across multiple platforms.</p>
                 </div>
             </details>
             <!-- Accordion Item 5 -->
             <details class="group border-b-1 border-grey bg-white overflow-hidden">
-                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none hover:bg-gray-50 transition-colors duration-200">
-                <span class="text-5xl">5. Professional <span class="text-primary accordion-title"><i>drone videography</i></span></span>
+                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
+                <span class="text-xl xl:text-5xl lg:text-2xl capitalize">5. Professional <span class="text-primary accordion-title"><i>drone videography</i></span></span>
                 <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
                     <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
                     <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </span>
                 </summary>
-                <div class="p-4 text-gray-600 leading-relaxed transition-all ease-in-out">
+                <div class="p-4 leading-relaxed transition-all ease-in-out">
                     <p>Drone videography offers a unique perspective that helps your business stand out. I capture cinematic aerial footage that showcases locations, projects, properties, and events with a level of scale and professionalism that traditional filming cannot achieve.</p>
                     <p class="mt-5">By capturing high-quality aerial production, I create visually striking content that adds depth to your marketing and leaves a lasting impression on your audience.</p>
                 </div>
             </details>
             <!-- Accordion Item 6 -->
             <details class="group border-b-1 border-grey bg-white overflow-hidden">
-                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none hover:bg-gray-50 transition-colors duration-200">
-                <span class="text-5xl">6. Podcast <span class="text-primary accordion-title"><i>Planning &amp; Production</i></span></span>
+                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
+                <span class="text-xl xl:text-5xl lg:text-2xl capitalize">6. Podcast <span class="text-primary accordion-title"><i>Planning &amp; Production</i></span></span>
                 <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
                     <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
                     <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </span>
                 </summary>
-                <div class="p-4 text-gray-600 leading-relaxed transition-all ease-in-out">
+                <div class="p-4 leading-relaxed transition-all ease-in-out">
                     <p>Email marketing remains one of the most effective ways to nurture customer relationships and drive consistent business growth. I develop and manage targeted email campaigns that keep your audience informed and engaged.</p>
                     <p class="mt-5">From campaign planning and content creation to design, scheduling, and performance tracking, every email is crafted to deliver value while supporting your broader marketing objectives.</p>
                 </div>
             </details>
             <!-- Accordion Item 7 -->
             <details class="group border-b-1 border-grey bg-white overflow-hidden">
-                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none hover:bg-gray-50 transition-colors duration-200">
-                <span class="text-5xl">7. Email <span class="text-primary accordion-title"><i>marketing</i></span></span>
+                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
+                <span class="text-xl xl:text-5xl lg:text-2xl capitalize">7. Email <span class="text-primary accordion-title"><i>marketing</i></span></span>
                 <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
                     <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
                     <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </span>
                 </summary>
-                <div class="p-4 text-gray-600 leading-relaxed transition-all ease-in-out">
+                <div class="p-4 leading-relaxed transition-all ease-in-out">
                     <p>Email marketing remains one of the most effective ways to nurture customer relationships and drive consistent business growth. I develop and manage targeted email campaigns that keep your audience informed and engaged.</p>
                     <p class="mt-5">From campaign planning and content creation to design, scheduling, and performance tracking, every email is crafted to deliver value while supporting your broader marketing objectives.</p>
                 </div>
             </details>
             <!-- Accordion Item 8 -->
             <details class="group border-b-1 border-grey bg-white overflow-hidden">
-                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none hover:bg-gray-50 transition-colors duration-200">
-                <span class="text-5xl">8. Paid <span class="text-primary accordion-title"><i>ads management</i></span></span>
+                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
+                <span class="text-xl xl:text-5xl lg:text-2xl capitalize">8. Paid <span class="text-primary accordion-title"><i>ads management</i></span></span>
                 <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
                     <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
                     <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </span>
                 </summary>
-                <div class="p-4 text-gray-600 leading-relaxed transition-all ease-in-out">
+                <div class="p-4 leading-relaxed transition-all ease-in-out">
                     <p>Successful advertising requires more than simply boosting posts or launching campaigns. I develop and manage strategic paid advertising campaigns designed to reach the right audience, maximise your budget, and generate measurable results.</p>
                     <p class="mt-5">Through ongoing optimisation, audience targeting, creative testing, and performance analysis, I ensure your campaigns remain effective and aligned with your business goals.</p>
                 </div>
             </details>
             <!-- Accordion Item 9 -->
             <details class="group border-b-1 border-grey bg-white overflow-hidden">
-                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none hover:bg-gray-50 transition-colors duration-200">
-                <span class="text-5xl">9. Website <span class="text-primary accordion-title"><i>management</i></span></span>
+                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
+                <span class="text-xl xl:text-5xl lg:text-2xl capitalize">9. Website <span class="text-primary accordion-title"><i>management</i></span></span>
                 <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
                     <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
                     <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </span>
                 </summary>
-                <div class="p-4 text-gray-600 leading-relaxed transition-all ease-in-out">
+                <div class="p-4 leading-relaxed transition-all ease-in-out">
                     <p>Your website is often the first impression potential customers have of your business. I provide ongoing website management to ensure your site remains professional, up-to-date, and performing at its best.</p>
                 </div>
             </details>
             <!-- Accordion Item 10 -->
             <details class="group border-b-1 border-grey bg-white overflow-hidden">
-                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none hover:bg-gray-50 transition-colors duration-200">
-                <span class="text-5xl">10. Branding <span class="text-primary accordion-title"><i>design</i></span></span>
+                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
+                <span class="text-xl xl:text-5xl lg:text-2xl capitalize">10. Branding <span class="text-primary accordion-title"><i>design</i></span></span>
                 <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
                     <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
                     <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </span>
                 </summary>
-                <div class="p-4 text-gray-600 leading-relaxed transition-all ease-in-out">
+                <div class="p-4 leading-relaxed transition-all ease-in-out">
                     <p>A strong brand creates recognition, trust, and consistency across every customer interaction. I develop thoughtful brand identities that reflect your business values, connect with your audience, and position you confidently within your market.</p>
                 </div>
             </details>
@@ -306,10 +372,10 @@
 
      <!-- Testimonials -->
      <section id="testimonials" class="pb-[150px] relative">
-        <div class="mx-[120px] pt-[150px]">
-            <h2 class="text-5xl inline-block border-b-1 border-grey pb-5 mb-20">Client Love</h2>
-            <div class="grid grid-cols-3 gap-10">
-                <div class="testimonial-block p-10 rounded-xl testimonial-shadow flex justify-between flex-col">
+        <div class="mx-[50px] xl:mx-[120px] pt-[50px] xl:pt-[150px] lg:pt-[80px]">
+            <h2 class="text-5xl lg:text-2xl inline-block border-b-1 border-grey pb-5 mb-20 mb-10">Client Love</h2>
+            <div class="grid xl:grid-cols-3 lg:grid-cols-2 gap-10">
+                <div class="testimonial-block xl:p-10 rounded-xl testimonial-shadow flex justify-between flex-col">
                     <div>
                     <svg class="block" width="40" height="30" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M28.1634 15.1212C30.8523 14.0095 33.4421 14.3332 35.8431 15.8554C39.4867 18.1669 40.3022 22.8739 37.9521 26.6717C35.799 30.1514 31.8097 30.4269 29.1525 29.6279C25.9745 28.6733 24.0955 26.3549 23.0087 23.4084C21.47 19.2372 21.846 15.0798 23.6878 11.0726C25.7307 6.62592 29.1208 3.43831 33.3209 1.0483C33.9614 0.684631 34.6268 0.359535 35.3183 0C35.9878 0.964271 36.6407 1.90512 37.3143 2.87766C36.1032 3.5459 34.9478 4.3106 33.8595 5.16436C30.6733 7.72794 28.6249 10.95 28.0973 15.0619C28.0656 15.1046 28.0532 15.1487 28.1055 15.1831C28.1124 15.1859 28.1441 15.1432 28.1634 15.1212Z" fill="#A60664"/>
@@ -318,8 +384,8 @@
                     </svg>
                     <p class="mt-6 text-md">Lana has been amazing since she came onboard. As a small business owner wearing many hats I struggled for years with fresh ideas or maintaining any consistency with my social channels. Lana's been a breath of fresh air bringing new exciting content ideas and ensuring that our socials are now receiving the attention they needed. She was quick to learn about not only my business but our entire industry. Highly recommend LMR Socials to any business!</p>
                     </div>
-                    <h3 class="text-3xl border-t-1 border-grey mt-8 pt-5">
-                        Sam Burke <img src="img/clients/logo-sbe.png" alt="Sam burke" class="inline ml-3 w-[100px] h-[50px] object-contain" />
+                    <h3 class="xl:text-3xl lg:text-xl border-t-1 border-grey mt-8 pt-5 flex items-center justify-start">
+                        <span>Sam Burke</span> <img src="img/testimonial/logo-sbe.png" alt="Sam burke" class="inline ml-3" />
                     </h3>
                 </div>
                 <div class="testimonial-block p-10 rounded-xl testimonial-shadow flex justify-between flex-col">
@@ -334,8 +400,8 @@
                         <p class="mt-3 text-md">It's taken so much of a mental load off of me to have good content batched. Definitely recommend using LMR Socials!</p>
                     </div>
                     </div>
-                    <h3 class="text-3xl border-t-1 border-grey mt-8 pt-5">
-                        Liv Mauri <img src="img/clients/logo-skin-ethos.png" alt="Sam burke" class="inline ml-3 w-[100px] h-[50px] object-contain" />
+                    <h3 class="xl:text-3xl lg:text-xl border-t-1 border-grey mt-8 pt-5 flex items-center justify-start">
+                        <span>Liv Mauri</span> <img src="img/testimonial/logo-skin-ethos.png" alt="Sam burke" class="inline ml-3" />
                     </h3>
                 </div>
                 <div class="testimonial-block p-10 rounded-xl testimonial-shadow flex justify-between flex-col">
@@ -350,8 +416,8 @@
                         <p class="mt-3 text-md">Talking in front of the camera was nerve-wracking for me at first, but Lana made it feel easy. She helped me feel comfortable, confident and natural when speaking about my business. I really appreciated her guidance and support, and I would highly recommend working with her.</p>
                     </div>
                     </div>
-                    <h3 class="text-3xl border-t-1 border-grey mt-8 pt-5">
-                        Jo Smith <img src="img/clients/logo-fast-print.png" alt="Sam burke" class="inline ml-3 w-[100px] h-[50px] object-contain" />
+                    <h3 class="xl:text-3xl lg:text-xl border-t-1 border-grey mt-8 pt-5 flex items-center justify-start">
+                        <span>Jo Smith</span> <img src="img/testimonial/logo-fast-print.png" alt="Sam burke" class="inline ml-3" />
                     </h3>
                 </div>
                 <div class="testimonial-block p-10 rounded-xl testimonial-shadow flex justify-between flex-col">
@@ -366,8 +432,8 @@
                         <p class="mt-3 text-md">Lana's work ethics impress me most and we look forward to achieving many milestones with LMR Socials!!!!!!</p>
                     </div>
                     </div>
-                    <h3 class="text-3xl border-t-1 border-grey mt-8 pt-5">
-                        Narenay Bakalian <img src="img/clients/logo-bb-designer-jewellers.png" alt="Sam burke" class="inline ml-3 w-[100px] h-[50px] object-contain" />
+                    <h3 class="xl:text-3xl lg:text-xl border-t-1 border-grey mt-8 pt-5 flex items-center justify-start">
+                        <span>Narenay Bakalian</span> <img src="img/testimonial/logo-bb-designer-jewellers.png" alt="Sam burke" class="inline ml-3" />
                     </h3>
                 </div>
                 <div class="testimonial-block p-10 rounded-xl testimonial-shadow flex justify-between flex-col">
@@ -381,8 +447,8 @@
                         <p class="mt-6 text-md">We have worked with Lana to build out our social media strategy. She has proven to be really friendly, engaged and highly efficient. Her reporting and creativity have helped enormously and we'd have no hesitation in recommending her.</p>
                     </div>
                     </div>
-                    <h3 class="text-3xl border-t-1 border-grey mt-8 pt-5">
-                        Damion Wright <img src="img/clients/logo-roadhow.png" alt="Sam burke" class="inline ml-3 w-[100px] h-[50px] object-contain" />
+                    <h3 class="xl:text-3xl lg:text-xl border-t-1 border-grey mt-8 pt-5 flex items-center justify-start">
+                        <span>Damion Wright</span> <img src="img/testimonial/logo-roadhow.png" alt="Sam burke" class="inline ml-3" />
                     </h3>
                 </div>
                 <div class="testimonial-block p-10 rounded-xl testimonial-shadow flex justify-between flex-col">
@@ -396,8 +462,8 @@
                         <p class="mt-6 text-md">We worked with Lana to capture photos and videos for our STRONG Pilates Alexandria Open Day, and she was fantastic to collaborate with. She made the entire process easy and seamless, and delivered great content super quickly. Overall, she was a joy to work with and we’d happily work with her again!</p>
                     </div>
                     </div>
-                    <h3 class="text-3xl border-t-1 border-grey mt-8 pt-5">
-                        Zoe Hille <img src="img/clients/logo-strong.png" alt="Sam burke" class="inline ml-3 w-[100px] h-[50px] object-contain" />
+                    <h3 class="xl:text-3xl lg:text-xl border-t-1 border-grey mt-8 pt-5 flex items-center justify-start">
+                        <span>Zoe Hille</span> <img src="img/testimonial/logo-strong.png" alt="Sam burke" class="inline ml-3" />
                     </h3>
                 </div>
             </div>
@@ -406,9 +472,9 @@
 
      <!-- Getting Started -->
     <section class="relative">
-        <div class="mx-[120px] pt-[150px]">
-            <h2 class="text-5xl inline-block border-b-1 border-grey pb-5 mb-20">Getting Started</h2>
-            <div class="grid grid-cols-4 gap-10">
+        <div class="mx-[50px] xl:mx-[120px] pt-[50px] xl:pt-[150px] lg:pt-[80px]">
+            <h2 class="text-xl xl:text-5xl lg:text-2xl inline-block border-b-1 border-grey pb-5 mb-20 lg:mb-10">Getting Started</h2>
+            <div class="grid xl:grid-cols-4 lg:grid-cols-2 gap-10">
                 <div class="bg-primary rounded-xl text-white flex items-center justify-center relative py-20 px-10">
                     <span class="absolute top-2 left-4">01.</span>
                     <div class="text-center">
@@ -438,23 +504,23 @@
                     </div>
                 </div>
             </div>
-            <img src="/img/design.png" alt="Design" class="absolute -top-[130px] right-0" />
+            <img src="/img/design.png" alt="Design" class="absolute xl:-top-[130px] right-0 lg:w-1/6" />
         </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="mx-[120px] py-[150px]">
-        <h2 class="text-5xl inline-block border-b-1 border-grey pb-5 mb-20">Contact</h2>
+    <section id="contact" class="xl:mx-[120px] py-[150px] lg:py-[80px]">
+        <h2 class="xl:text-5xl lg:text-2xl inline-block border-b-1 border-grey pb-5 mb-20 lg:mb-10">Contact</h2>
         <form>
             <div class="grid grid-cols-2 gap-6">
                 <div>
-                    <label for="first-name" class="block text-sm/6 font-medium text-gray-900">Name</label>
+                    <label for="first-name" class="block text-md font-medium text-gray-900">Name</label>
                     <div class="mt-2">
                         <input id="first-name" type="text" name="first-name" autocomplete="given-name" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-primary sm:text-sm/6" placeholder="Enter your name" />
                     </div>
                 </div>
                 <div>
-                    <label for="last-name" class="block text-sm/6 font-medium text-gray-900">Email</label>
+                    <label for="last-name" class="block text-md font-medium text-gray-900">Email</label>
                     <div class="mt-2">
                         <input id="last-name" type="text" name="last-name" autocomplete="family-name" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-primary sm:text-sm/6" placeholder="Enter your email address" />
                     </div>
@@ -473,7 +539,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="text-sm/6">
+                        <div class="text-md">
                             <label for="smm" class="font-regular">Social Media Management</label>
                         </div>
                     </div>
@@ -487,7 +553,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="text-sm/6">
+                        <div class="text-md">
                             <label for="content" class="font-regular">Content Creation</label>
                         </div>
                     </div>
@@ -501,7 +567,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="text-sm/6">
+                        <div class="text-md">
                             <label for="droneVideo" class="font-regular">Professional Drone Videography</label>
                         </div>
                     </div>
@@ -515,7 +581,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="text-sm/6">
+                        <div class="text-md">
                             <label for="emailMarket" class="font-regular">Email Marketing</label>
                         </div>
                     </div>
@@ -529,7 +595,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="text-sm/6">
+                        <div class="text-md">
                             <label for="webMngmt" class="font-regular">Web Management</label>
                         </div>
                     </div>
@@ -543,7 +609,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="text-sm/6">
+                        <div class="text-md">
                             <label for="other" class="font-regular">Other</label>
                         </div>
                     </div>
@@ -559,7 +625,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="text-sm/6">
+                        <div class="text-md">
                             <label for="smc" class="font-regular">Social Media Consulting</label>
                         </div>
                     </div>
@@ -573,7 +639,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="text-sm/6">
+                        <div class="text-md">
                             <label for="proPhotoVideo" class="font-regular">Professional Photography &amp; Videography</label>
                         </div>
                     </div>
@@ -587,7 +653,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="text-sm/6">
+                        <div class="text-md">
                             <label for="podcast" class="font-regular">Podcast Planning &amp; Production</label>
                         </div>
                     </div>
@@ -601,7 +667,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="text-sm/6">
+                        <div class="text-md">
                             <label for="ads" class="font-regular">paid ads management</label>
                         </div>
                     </div>
@@ -615,14 +681,14 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="text-sm/6">
+                        <div class="text-md">
                             <label for="brandDesign" class="font-regular">branding design</label>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-span-full mt-3">
-                <label for="message" class="block text-sm/6 ">Message <span class="text-red-500">*</span></label>
+                <label for="message" class="block text-md ">Message <span class="text-red-500">*</span></label>
                 <div class="mt-2">
                   <textarea id="message" name="message" rows="3" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:primary sm:text-sm/6" placeholder="Enter your message here..."></textarea>
                 </div>
@@ -634,18 +700,18 @@
                 </svg>                    
             </button>
         </form>
-        <div class="mt-20 text-center">
-            <h6 class="mb-4 text-3xl">I've received your enquiry and will get back to you within 1-2 business days.</h6>
-            <h6 class=" text-3xl">I can't wait to learn more about your business and how I can help grow your online presence.</h6>
+        <div class="mt-20 text-center xl:text-3xl lg:text-2xl">
+            <h6 class="mb-4">I've received your enquiry and will get back to you within 1-2 business days.</h6>
+            <h6>I can't wait to learn more about your business and how I can help grow your online presence.</h6>
         </div>
     </section>
 
     <!-- Footer -->
      <footer class="bg-primary py-6">
         <div class="footer-main text-white">
-            <div class="grid grid-cols-3 justify-center items-center text-center py-18">
+            <div class="grid xl:grid-cols-3 justify-center items-center text-center py-18">
                 <div class="border-e border-white">
-                    <h6 class="text-3xl border-b inline-block pb-1 mb-5">Get in Touch</h6>
+                    <h6 class="xl:text-3xl lg:text-2xl border-b inline-block pb-1 mb-5">Get in Touch</h6>
                     <div>
                         <a href="javascript:void(0)" class="inline-block pe-5">
                             <svg width="30" height="30" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -665,10 +731,10 @@
                     </div>
                 </div>
                 <div class="border-e border-white">
-                    <img src="img/logo-white.png" alt="Logo" class="inline-block" />
+                    <img src="img/logo-white.png" alt="Logo" class="inline-block w-2/3" />
                 </div>
                 <div>
-                    <h6 class="text-3xl border-b inline-block pb-1 mb-5">Connect</h6>
+                    <h6 class="xl:text-3xl lg:text-2xl border-b inline-block pb-1 mb-5">Connect</h6>
                     <div>
                         <a href="javascript:void(0)" class="inline-block pe-5">
                             <svg width="30" height="30" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -695,12 +761,61 @@
      <script src="js/main.js"></script>
      <script>
         var swiper = new Swiper('.mySwiper', {
-        slidesPerView: 5,
-        spaceBetween: 30,
+        slidesPerView: 1,
+        spaceBetween: 0,
         loop: true,
         autoplay: {
             delay: 1000,
         },
+        breakpoints: {
+            // when window width is >= 480px
+            480: {
+                slidesPerView: 2,
+                spaceBetween: 20
+            },
+            // when window width is >= 640px
+            640: {
+                slidesPerView: 3,
+                spaceBetween: 20
+            },
+            991: {
+                slidesPerView: 4,
+                spaceBetween: 20
+            },
+            1360: {
+                slidesPerView: 5,
+                spaceBetween: 20
+            }
+        }
+      });
+
+      var swiper = new Swiper('.clientSwipper', {
+        slidesPerView: 8,
+        spaceBetween: 0,
+        loop: true,
+        autoplay: {
+            delay: 1000,
+        },
+        breakpoints: {
+            // when window width is >= 480px
+            480: {
+                slidesPerView: 2,
+                spaceBetween: 20
+            },
+            // when window width is >= 640px
+            640: {
+                slidesPerView: 3,
+                spaceBetween: 20
+            },
+            991: {
+                slidesPerView: 4,
+                spaceBetween: 20
+            },
+            1360: {
+                slidesPerView: 8,
+                spaceBetween: 20
+            }
+        }
       });
 
     //   Active nav links
