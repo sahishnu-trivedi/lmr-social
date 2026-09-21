@@ -18,14 +18,16 @@
         }
     </style>
 </head>
-<body class="scroll-smooth">
-    <header class="fixed top-8 left-0 z-10 w-full px-10">
-        <div class="bg-primary xl:py-3 grid grid-cols-5 items-center xl:px-30 px-10 rounded-[100px] header-in">
+<body class="scroll-smooth overflow-x-hidden">
+    <header class="fixed top-4 sm:top-6 xl:top-8 left-0 z-50 w-full px-4 sm:px-6 xl:px-10">
+        <div class="bg-primary py-3 xl:py-3 flex sm:grid sm:grid-cols-5 items-center justify-between px-5 sm:px-6 xl:px-30 rounded-[30px] sm:rounded-[100px] header-in">
             <div class="col-span-2">
-                <img src="img/logo-white.png" alt="Logo white" class="h-[60px]" />
+                <img src="img/logo-white.png" alt="Logo white" class="h-[38px] sm:h-[45px] xl:h-[60px]" />
             </div>
-            <nav class="col-span-3">
-                <ul class="text-white flex items-center justify-between">
+
+            <!-- Desktop nav -->
+            <nav class="hidden sm:block col-span-3">
+                <ul class="text-white flex items-center justify-between text-xs md:text-sm xl:text-base">
                     <li><a href="#home" data-active="true" class="nav-link data-[active=true]:border-b border-white pb-1">Home</a></li>
                     <li><a href="#about" data-active="false" class="nav-link data-[active=true]:border-b border-white pb-1">About</a></li>
                     <li><a href="#services" data-active="false" class="nav-link data-[active=true]:border-b border-white pb-1">Services</a></li>
@@ -33,32 +35,51 @@
                     <li><a href="#contact" data-active="false" class="nav-link data-[active=true]:border-b border-white pb-1">Contact</a></li>
                 </ul>
             </nav>
+
+            <!-- Hamburger button (mobile only) -->
+            <button id="menuBtn" aria-label="Toggle menu" aria-expanded="false" class="sm:hidden text-white flex flex-col justify-center items-center w-8 h-8 gap-1.5 shrink-0">
+                <span id="barTop" class="block w-6 h-0.5 bg-white transition-transform duration-300"></span>
+                <span id="barMid" class="block w-6 h-0.5 bg-white transition-opacity duration-300"></span>
+                <span id="barBot" class="block w-6 h-0.5 bg-white transition-transform duration-300"></span>
+            </button>
+        </div>
+
+        <!-- Mobile menu panel -->
+        <div id="mobileMenu" class="sm:hidden hidden bg-primary mt-2 rounded-2xl px-6 py-6 mx-1 shadow-lg">
+            <ul class="text-white flex flex-col gap-5 text-center text-base">
+                <li><a href="#home" data-active="true" class="nav-link-mobile inline-block data-[active=true]:border-b border-white pb-1">Home</a></li>
+                <li><a href="#about" data-active="false" class="nav-link-mobile inline-block data-[active=true]:border-b border-white pb-1">About</a></li>
+                <li><a href="#services" data-active="false" class="nav-link-mobile inline-block data-[active=true]:border-b border-white pb-1">Services</a></li>
+                <li><a href="#testimonials" data-active="false" class="nav-link-mobile inline-block data-[active=true]:border-b border-white pb-1">Testimonials</a></li>
+                <li><a href="#contact" data-active="false" class="nav-link-mobile inline-block data-[active=true]:border-b border-white pb-1">Contact</a></li>
+            </ul>
         </div>
     </header>
+
     <!-- Banner -->
     <section id="home">
         <div class="relative">
-            <h1 class="mx-[120px] absolute top-[40%] translate-y-[-60%] text-white xl:text-4xl lg:text-2xl xl:w-2xl">
+            <h1 class="mx-6 sm:mx-10 md:mx-16 lg:mx-20 xl:mx-[120px] absolute top-[50%] sm:top-[50%] xl:top-[40%] translate-y-[-50%] xl:translate-y-[-60%] text-white text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-4xl xl:w-2xl max-w-md md:max-w-lg lg:max-w-xl xl:max-w-none">
                 <span>Your audience deserves more than just content , they deserve to be <span class="text-pink"><i>wowed.</i></span></span>
-                <span class="block mt-5">And that’s exactly what I’m here for!</span>
+                <span class="block mt-3 sm:mt-4 xl:mt-5">And that’s exactly what I’m here for!</span>
             </h1>
-            <img src="img/banner.png" alt="Banner" />
+            <img src="img/banner.png" alt="Banner" class="w-full h-[340px] sm:h-[420px] md:h-[520px] lg:h-[600px] xl:h-auto object-cover" />
         </div>
     </section>
 
     <!-- Text -->
     <section class="border-b-1 border-grey relative">
-        <div class="xl:mx-[120px] text-center text-xl xl:text-5xl lg:text-2xl py-[50px] xl:py-[150px] lg:py-[80px] mb-3 capitalize">
-            <h2 class="mb-4">Over 5 billion people use social media worldwide, </h2>
+        <div class="mx-6 sm:mx-10 md:mx-16 lg:mx-20 xl:mx-[120px] text-center text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-5xl py-10 sm:py-14 md:py-20 lg:py-[80px] xl:py-[150px] mb-3 capitalize">
+            <h2 class="mb-3 sm:mb-4">Over 5 billion people use social media worldwide, </h2>
             <h2>Let’s make sure they’re seeing <span class="text-secondary"><i>your business.</i></span></h2>
         </div>
         <img src="/img/design.png" alt="Design" class="absolute xl:-top-[100px] right-0 lg:w-1/6 hidden md:inline-block" />
     </section>
 
     <!-- My Clients -->
-    <section class="mx-[50px] xl:mx-[120px] pt-[50px] xl:pt-[150px] lg:pt-[80px]">
-        <h2 class="xl:text-5xl lg:text-2xl inline-block border-b-1 border-grey xl:pb-5 xl:mb-20 mb-10">My Clients</h2>
-        <ul class="list-unstyled grid grid-cols-2 xl:grid-cols-6 gap-5 lg:gap-x-20 lg:gap-y-10 items-center hidden">
+    <section class="mx-6 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-[120px] pt-10 sm:pt-14 md:pt-20 lg:pt-[80px] xl:pt-[150px]">
+        <h2 class="text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-5xl inline-block border-b-1 border-grey pb-3 sm:pb-4 xl:pb-5 mb-6 sm:mb-8 md:mb-12 xl:mb-20">My Clients</h2>
+        <ul class="list-unstyled grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-5 lg:gap-x-20 lg:gap-y-10 items-center hidden">
             <li>
                 <img src="img/clients/logo-birdie.png" alt="Birdie Logo" class="w-1/2" />
             </li>
@@ -97,7 +118,7 @@
             </li>
         </ul>
          <!-- Slider main container -->
-         <div class="swiper clientSwipper mt-10">
+         <div class="swiper clientSwipper mt-6 sm:mt-8 xl:mt-10">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
@@ -142,10 +163,10 @@
     </section>
 
     <!-- Portfolio -->
-     <section class="mx-[50px] xl:mx-[120px] pt-[50px] xl:pt-[150px] lg:pt-[80px]">
-        <h2 class="text-xl xl:text-5xl lg:text-2xl inline-block border-b-1 border-grey xl:pb-5 xl:mb-20 mb-10">Client Portfolio</h2>
+     <section class="mx-6 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-[120px] pt-10 sm:pt-14 md:pt-20 lg:pt-[80px] xl:pt-[150px]">
+        <h2 class="text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-5xl inline-block border-b-1 border-grey pb-3 sm:pb-4 xl:pb-5 mb-6 sm:mb-8 md:mb-12 xl:mb-20">Client Portfolio</h2>
         <!-- Slider main container -->
-        <div class="swiper mySwiper mt-10">
+        <div class="swiper mySwiper mt-6 sm:mt-8 xl:mt-10">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
@@ -194,226 +215,226 @@
     </section>
 
     <!-- About -->
-    <section id="about" class="mx-[50px] xl:mx-[120px] pt-[50px] xl:pt-[150px] lg:pt-[80px]">
-        <h2 class="text-xl xl:text-5xl lg:text-2xl inline-block border-b-1 border-grey xl:pb-5 xl:mb-20 mb-10">About LMR Socials</h2>
-        <p class="xl:text-xl mb-10">Social media is more than just posting content. It's about creating meaningful connections, building trust, and ensuring every piece of content reflects your brand and business goals. That's why I take a strategic approach to everything I do, combining creativity with marketing insight to deliver content that not only looks great but performs.</p>
-        <p class="xl:text-xl">At LMR Socials, I pride myself on building genuine relationships with my clients. I take the time to understand your business, your values, and your goals, allowing me to become an extension of your team and create marketing that feels authentic, consistent, and effective.</p>
+    <section id="about" class="mx-6 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-[120px] pt-10 sm:pt-14 md:pt-20 lg:pt-[80px] xl:pt-[150px]">
+        <h2 class="text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-5xl inline-block border-b-1 border-grey pb-3 sm:pb-4 xl:pb-5 mb-6 sm:mb-8 md:mb-12 xl:mb-20">About LMR Socials</h2>
+        <p class="text-sm sm:text-base md:text-lg xl:text-xl mb-6 sm:mb-8 xl:mb-10">Social media is more than just posting content. It's about creating meaningful connections, building trust, and ensuring every piece of content reflects your brand and business goals. That's why I take a strategic approach to everything I do, combining creativity with marketing insight to deliver content that not only looks great but performs.</p>
+        <p class="text-sm sm:text-base md:text-lg xl:text-xl">At LMR Socials, I pride myself on building genuine relationships with my clients. I take the time to understand your business, your values, and your goals, allowing me to become an extension of your team and create marketing that feels authentic, consistent, and effective.</p>
     </section>
 
     <!-- About Founder -->
-    <section class="bg-primary mt-[150px]">
-        <div class="mx-[50px] xl:mx-[120px] xl:py-[150px] lg:py-[80px] grid xl:grid-cols-3 xl:gap-30 text-white">
-            <div class="col-span-2">
-                <h2 class="text-xl xl:text-5xl lg:text-2xl inline-block border-b-1 border-grey xl:pb-5 xl:mb-20 mb-10">About The Founder</h2>
-                <p class="text-xl mb-10">Hi, I'm Lana — Founder and Director of LMR Socials, based in Sydney.</p>
-                <p class="text-xl mb-10">Having worked with businesses across a range of industries and equipped with an International Business BSc, I understand that no two brands are the same. That's why I take a personalised approach to every project, focusing on creating tailored strategies and content that align with each client's goals, audience, and vision.</p>
-                <p class="text-xl">When you work with LMR Socials, you're not just hiring a marketing provider - you're gaining a dedicated partner who genuinely cares about helping your business grow and succeed.</p>
+    <section class="bg-primary mt-16 sm:mt-24 xl:mt-[150px]">
+        <div class="mx-6 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-[120px] py-12 sm:py-16 md:py-20 lg:py-[80px] xl:py-[150px] grid grid-cols-1 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-30 text-white">
+            <div class="col-span-1 xl:col-span-2">
+                <h2 class="text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-5xl inline-block border-b-1 border-grey pb-3 sm:pb-4 xl:pb-5 mb-6 sm:mb-8 md:mb-12 xl:mb-20">About The Founder</h2>
+                <p class="text-base sm:text-lg xl:text-xl mb-6 sm:mb-8 xl:mb-10">Hi, I'm Lana — Founder and Director of LMR Socials, based in Sydney.</p>
+                <p class="text-base sm:text-lg xl:text-xl mb-6 sm:mb-8 xl:mb-10">Having worked with businesses across a range of industries and equipped with an International Business BSc, I understand that no two brands are the same. That's why I take a personalised approach to every project, focusing on creating tailored strategies and content that align with each client's goals, audience, and vision.</p>
+                <p class="text-base sm:text-lg xl:text-xl">When you work with LMR Socials, you're not just hiring a marketing provider - you're gaining a dedicated partner who genuinely cares about helping your business grow and succeed.</p>
             </div>
             <div class="col-span-1">
-                <img src="img/lana-img.png" alt="Founder Lana Image" />
+                <img src="img/lana-img.png" alt="Founder Lana Image" class="w-full max-w-xs mx-auto xl:max-w-none xl:mx-0" />
             </div>
         </div>
     </section>
 
     <!-- Offer -->
-     <section id="services" class="mx-[50px] xl:mx-[120px] pt-[50px] xl:pt-[150px] lg:pt-[80px]">
-        <h2 class="text-xl xl:text-5xl lg:text-2xl inline-block border-b-1 border-grey xl:pb-5 xl:mb-20 mb-10">What I Offer</h2>      
+     <section id="services" class="mx-6 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-[120px] pt-10 sm:pt-14 md:pt-20 lg:pt-[80px] xl:pt-[150px]">
+        <h2 class="text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-5xl inline-block border-b-1 border-grey pb-3 sm:pb-4 xl:pb-5 mb-6 sm:mb-8 md:mb-12 xl:mb-20">What I Offer</h2>
         <div class="space-y-2">
             <!-- Accordion Item 1 -->
             <details class="group border-b-1 border-grey bg-white overflow-hidden" open>
-                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
-                <div class="text-xl xl:text-5xl lg:text-2xl capitalize">
-                    <div class="grid grid-cols-[80px_1fr]">
-                        <p class="me-3 text-end">1.</p>
+                <summary class="flex items-center justify-between p-3 sm:p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
+                <div class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-5xl capitalize">
+                    <div class="grid grid-cols-[36px_1fr] sm:grid-cols-[60px_1fr] xl:grid-cols-[80px_1fr]">
+                        <p class="me-2 sm:me-3 text-end">1.</p>
                         <p>Social Media <span class="text-primary accordion-title"><i>Management</i></span></p>
                     </div>
                 </div>
-                <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
-                    <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
+                <span class="transition group-open:rotate-180 rounded-full bg-primary p-1.5 sm:p-2 shrink-0">
+                    <svg fill="none" height="18" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18" class="sm:h-6 sm:w-6">
                     <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </span>
                 </summary>
-                <div class="p-4 ps-15 leading-relaxed transition-all ease-in-out">
+                <div class="p-3 sm:p-4 ps-8 sm:ps-12 xl:ps-15 text-sm sm:text-base leading-relaxed transition-all ease-in-out">
                     <p>Social media shouldn’t feel overwhelming - it should feel structured, intentional, and aligned with your business. I manage your platforms end-to-end, including content planning, scheduling and posting. Every decision is guided by strategy, ensuring your content not only looks cohesive but also speaks to the right audience.</p>
-                    <p class="mt-5">I take the time to understand your brand, tone, and goals, then translate that into consistent, high-quality content that builds recognition and trust.</p>
+                    <p class="mt-4 sm:mt-5">I take the time to understand your brand, tone, and goals, then translate that into consistent, high-quality content that builds recognition and trust.</p>
                 </div>
             </details>
             <!-- Accordion Item 2 -->
             <details class="group border-b-1 border-grey bg-white overflow-hidden">
-                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
-                <div class="text-xl xl:text-5xl lg:text-2xl capitalize">
-                    <div class="grid grid-cols-[80px_1fr]">
-                        <p class="me-3 text-end">2.</p>
+                <summary class="flex items-center justify-between p-3 sm:p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
+                <div class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-5xl capitalize">
+                    <div class="grid grid-cols-[36px_1fr] sm:grid-cols-[60px_1fr] xl:grid-cols-[80px_1fr]">
+                        <p class="me-2 sm:me-3 text-end">2.</p>
                         <p>Social Media <span class="text-primary accordion-title"><i>Consulting</i></span></p>
                     </div>
                 </div>
-                <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
-                    <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
+                <span class="transition group-open:rotate-180 rounded-full bg-primary p-1.5 sm:p-2 shrink-0">
+                    <svg fill="none" height="18" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18" class="sm:h-6 sm:w-6">
                     <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </span>
                 </summary>
-                <div class="p-4 ps-15 leading-relaxed transition-all ease-in-out">
+                <div class="p-3 sm:p-4 ps-8 sm:ps-12 xl:ps-15 text-sm sm:text-base leading-relaxed transition-all ease-in-out">
                     <p>For businesses that prefer to manage their own platforms but need direction, my consulting service provides clarity and structure. I assess your current presence, identify what's working, and highlight opportunities for growth. From content strategy and positioning to posting structure and audience engagement, you will have a clear roadmap to follow.</p>
-                    <p class="mt-5">This is a hands-on, practical service designed to leave you feeling confident in your approach. You'll gain a deeper understanding of your audience, your content direction, and how to show up consistently.</p>
+                    <p class="mt-4 sm:mt-5">This is a hands-on, practical service designed to leave you feeling confident in your approach. You'll gain a deeper understanding of your audience, your content direction, and how to show up consistently.</p>
                 </div>
             </details>
             <!-- Accordion Item 3 -->
             <details class="group border-b-1 border-grey bg-white overflow-hidden">
-                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
-                <div class="text-xl xl:text-5xl lg:text-2xl capitalize">
-                    <div class="grid grid-cols-[80px_1fr]">
-                        <p class="me-3 text-end">3.</p>
+                <summary class="flex items-center justify-between p-3 sm:p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
+                <div class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-5xl capitalize">
+                    <div class="grid grid-cols-[36px_1fr] sm:grid-cols-[60px_1fr] xl:grid-cols-[80px_1fr]">
+                        <p class="me-2 sm:me-3 text-end">3.</p>
                         <p>Content <span class="text-primary accordion-title"><i>Creation</i></span></p>
                     </div>
                 </div>
-                <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
-                    <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
+                <span class="transition group-open:rotate-180 rounded-full bg-primary p-1.5 sm:p-2 shrink-0">
+                    <svg fill="none" height="18" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18" class="sm:h-6 sm:w-6">
                     <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </span>
                 </summary>
-                <div class="p-4 ps-15 leading-relaxed transition-all ease-in-out">
+                <div class="p-3 sm:p-4 ps-8 sm:ps-12 xl:ps-15 text-sm sm:text-base leading-relaxed transition-all ease-in-out">
                     <p>Effective content does more than fill a feed - it tells your story, captures attention, and builds connection with your audience. I create high-quality, on-brand content designed to reflect your business professionally while supporting your wider marketing goals.</p>
-                    <p class="mt-5">With my monthly packages, every piece of content is created with purpose, ensuring consistency across your platforms and helping your brand stand out in a crowded digital space.</p>
+                    <p class="mt-4 sm:mt-5">With my monthly packages, every piece of content is created with purpose, ensuring consistency across your platforms and helping your brand stand out in a crowded digital space.</p>
                 </div>
             </details>
             <!-- Accordion Item 4 -->
             <details class="group border-b-1 border-grey bg-white overflow-hidden">
-                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
-                <div class="text-xl xl:text-5xl lg:text-2xl capitalize">
-                    <div class="grid grid-cols-[80px_1fr]">
-                        <p class="me-3 text-end">4.</p>
+                <summary class="flex items-center justify-between p-3 sm:p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
+                <div class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-5xl capitalize">
+                    <div class="grid grid-cols-[36px_1fr] sm:grid-cols-[60px_1fr] xl:grid-cols-[80px_1fr]">
+                        <p class="me-2 sm:me-3 text-end">4.</p>
                         <p>Professional <span class="text-primary accordion-title"><i>photography &amp; videography</i></span></p>
                     </div>
                 </div>
-                <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
-                    <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
+                <span class="transition group-open:rotate-180 rounded-full bg-primary p-1.5 sm:p-2 shrink-0">
+                    <svg fill="none" height="18" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18" class="sm:h-6 sm:w-6">
                     <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </span>
                 </summary>
-                <div class="p-4 ps-15 leading-relaxed transition-all ease-in-out">
+                <div class="p-3 sm:p-4 ps-8 sm:ps-12 xl:ps-15 text-sm sm:text-base leading-relaxed transition-all ease-in-out">
                     <p>Professional visuals are one of the most powerful ways to showcase your business. I capture high-quality photography and video content that highlights your brand in a way that feels authentic, polished, and engaging.</p>
-                    <p class="mt-5">Whether for social media, websites, advertising campaigns, or marketing materials, my content is designed to strengthen your brand image and provide you with versatile assets that can be used across multiple platforms.</p>
+                    <p class="mt-4 sm:mt-5">Whether for social media, websites, advertising campaigns, or marketing materials, my content is designed to strengthen your brand image and provide you with versatile assets that can be used across multiple platforms.</p>
                 </div>
             </details>
             <!-- Accordion Item 5 -->
             <details class="group border-b-1 border-grey bg-white overflow-hidden">
-                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
-                <div class="text-xl xl:text-5xl lg:text-2xl capitalize">
-                    <div class="grid grid-cols-[80px_1fr]">
-                        <p class="me-3 text-end">5.</p>
+                <summary class="flex items-center justify-between p-3 sm:p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
+                <div class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-5xl capitalize">
+                    <div class="grid grid-cols-[36px_1fr] sm:grid-cols-[60px_1fr] xl:grid-cols-[80px_1fr]">
+                        <p class="me-2 sm:me-3 text-end">5.</p>
                         <p>Professional <span class="text-primary accordion-title"><i>drone videography</i></span></p>
                     </div>
                 </div>
-                <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
-                    <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
+                <span class="transition group-open:rotate-180 rounded-full bg-primary p-1.5 sm:p-2 shrink-0">
+                    <svg fill="none" height="18" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18" class="sm:h-6 sm:w-6">
                     <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </span>
                 </summary>
-                <div class="p-4 ps-15 leading-relaxed transition-all ease-in-out">
+                <div class="p-3 sm:p-4 ps-8 sm:ps-12 xl:ps-15 text-sm sm:text-base leading-relaxed transition-all ease-in-out">
                     <p>Drone videography offers a unique perspective that helps your business stand out. I capture cinematic aerial footage that showcases locations, projects, properties, and events with a level of scale and professionalism that traditional filming cannot achieve.</p>
-                    <p class="mt-5">By capturing high-quality aerial production, I create visually striking content that adds depth to your marketing and leaves a lasting impression on your audience.</p>
+                    <p class="mt-4 sm:mt-5">By capturing high-quality aerial production, I create visually striking content that adds depth to your marketing and leaves a lasting impression on your audience.</p>
                 </div>
             </details>
             <!-- Accordion Item 6 -->
             <details class="group border-b-1 border-grey bg-white overflow-hidden">
-                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
-                <div class="text-xl xl:text-5xl lg:text-2xl capitalize">
-                    <div class="grid grid-cols-[80px_1fr]">
-                        <p class="me-3 text-end">6.</p>
+                <summary class="flex items-center justify-between p-3 sm:p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
+                <div class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-5xl capitalize">
+                    <div class="grid grid-cols-[36px_1fr] sm:grid-cols-[60px_1fr] xl:grid-cols-[80px_1fr]">
+                        <p class="me-2 sm:me-3 text-end">6.</p>
                         <p>Podcast <span class="text-primary accordion-title"><i>Planning &amp; Production</i></span></p>
                     </div>
                 </div>
-                <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
-                    <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
+                <span class="transition group-open:rotate-180 rounded-full bg-primary p-1.5 sm:p-2 shrink-0">
+                    <svg fill="none" height="18" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18" class="sm:h-6 sm:w-6">
                     <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </span>
                 </summary>
-                <div class="p-4 ps-15 leading-relaxed transition-all ease-in-out">
+                <div class="p-3 sm:p-4 ps-8 sm:ps-12 xl:ps-15 text-sm sm:text-base leading-relaxed transition-all ease-in-out">
                     <p>Email marketing remains one of the most effective ways to nurture customer relationships and drive consistent business growth. I develop and manage targeted email campaigns that keep your audience informed and engaged.</p>
-                    <p class="mt-5">From campaign planning and content creation to design, scheduling, and performance tracking, every email is crafted to deliver value while supporting your broader marketing objectives.</p>
+                    <p class="mt-4 sm:mt-5">From campaign planning and content creation to design, scheduling, and performance tracking, every email is crafted to deliver value while supporting your broader marketing objectives.</p>
                 </div>
             </details>
             <!-- Accordion Item 7 -->
             <details class="group border-b-1 border-grey bg-white overflow-hidden">
-                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
-                <div class="text-xl xl:text-5xl lg:text-2xl capitalize">
-                    <div class="grid grid-cols-[80px_1fr]">
-                        <p class="me-3 text-end">7.</p>
+                <summary class="flex items-center justify-between p-3 sm:p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
+                <div class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-5xl capitalize">
+                    <div class="grid grid-cols-[36px_1fr] sm:grid-cols-[60px_1fr] xl:grid-cols-[80px_1fr]">
+                        <p class="me-2 sm:me-3 text-end">7.</p>
                         <p>Email <span class="text-primary accordion-title"><i>marketing</i></span></p>
                     </div>
                 </div>
-                <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
-                    <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
+                <span class="transition group-open:rotate-180 rounded-full bg-primary p-1.5 sm:p-2 shrink-0">
+                    <svg fill="none" height="18" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18" class="sm:h-6 sm:w-6">
                     <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </span>
                 </summary>
-                <div class="p-4 ps-15 leading-relaxed transition-all ease-in-out">
+                <div class="p-3 sm:p-4 ps-8 sm:ps-12 xl:ps-15 text-sm sm:text-base leading-relaxed transition-all ease-in-out">
                     <p>Email marketing remains one of the most effective ways to nurture customer relationships and drive consistent business growth. I develop and manage targeted email campaigns that keep your audience informed and engaged.</p>
-                    <p class="mt-5">From campaign planning and content creation to design, scheduling, and performance tracking, every email is crafted to deliver value while supporting your broader marketing objectives.</p>
+                    <p class="mt-4 sm:mt-5">From campaign planning and content creation to design, scheduling, and performance tracking, every email is crafted to deliver value while supporting your broader marketing objectives.</p>
                 </div>
             </details>
             <!-- Accordion Item 8 -->
             <details class="group border-b-1 border-grey bg-white overflow-hidden">
-                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
-                <div class="text-xl xl:text-5xl lg:text-2xl capitalize">
-                    <div class="grid grid-cols-[80px_1fr]">
-                        <p class="me-3 text-end">8.</p>
+                <summary class="flex items-center justify-between p-3 sm:p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
+                <div class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-5xl capitalize">
+                    <div class="grid grid-cols-[36px_1fr] sm:grid-cols-[60px_1fr] xl:grid-cols-[80px_1fr]">
+                        <p class="me-2 sm:me-3 text-end">8.</p>
                         <p>Paid <span class="text-primary accordion-title"><i>ads management</i></span></p>
                     </div>
                 </div>
-                <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
-                    <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
+                <span class="transition group-open:rotate-180 rounded-full bg-primary p-1.5 sm:p-2 shrink-0">
+                    <svg fill="none" height="18" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18" class="sm:h-6 sm:w-6">
                     <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </span>
                 </summary>
-                <div class="p-4 ps-15 leading-relaxed transition-all ease-in-out">
+                <div class="p-3 sm:p-4 ps-8 sm:ps-12 xl:ps-15 text-sm sm:text-base leading-relaxed transition-all ease-in-out">
                     <p>Successful advertising requires more than simply boosting posts or launching campaigns. I develop and manage strategic paid advertising campaigns designed to reach the right audience, maximise your budget, and generate measurable results.</p>
-                    <p class="mt-5">Through ongoing optimisation, audience targeting, creative testing, and performance analysis, I ensure your campaigns remain effective and aligned with your business goals.</p>
+                    <p class="mt-4 sm:mt-5">Through ongoing optimisation, audience targeting, creative testing, and performance analysis, I ensure your campaigns remain effective and aligned with your business goals.</p>
                 </div>
             </details>
             <!-- Accordion Item 9 -->
             <details class="group border-b-1 border-grey bg-white overflow-hidden">
-                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
-                <div class="text-xl xl:text-5xl lg:text-2xl capitalize">
-                    <div class="grid grid-cols-[80px_1fr]">
-                        <p class="me-3 text-end">9.</p>
+                <summary class="flex items-center justify-between p-3 sm:p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
+                <div class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-5xl capitalize">
+                    <div class="grid grid-cols-[36px_1fr] sm:grid-cols-[60px_1fr] xl:grid-cols-[80px_1fr]">
+                        <p class="me-2 sm:me-3 text-end">9.</p>
                         <p>Website <span class="text-primary accordion-title"><i>management</i></span></p>
                     </div>
                 </div>
-                <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
-                    <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
+                <span class="transition group-open:rotate-180 rounded-full bg-primary p-1.5 sm:p-2 shrink-0">
+                    <svg fill="none" height="18" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18" class="sm:h-6 sm:w-6">
                     <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </span>
                 </summary>
-                <div class="p-4 ps-15 leading-relaxed transition-all ease-in-out">
+                <div class="p-3 sm:p-4 ps-8 sm:ps-12 xl:ps-15 text-sm sm:text-base leading-relaxed transition-all ease-in-out">
                     <p>Your website is often the first impression potential customers have of your business. I provide ongoing website management to ensure your site remains professional, up-to-date, and performing at its best.</p>
                 </div>
             </details>
             <!-- Accordion Item 10 -->
             <details class="group border-b-1 border-grey bg-white overflow-hidden">
-                <summary class="flex items-center justify-between p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
-                <div class="text-xl xl:text-5xl lg:text-2xl capitalize">
-                    <div class="grid grid-cols-[80px_1fr]">
-                        <p class="me-3 text-end">10.</p>
+                <summary class="flex items-center justify-between p-3 sm:p-4 font-medium text-gray-900 cursor-pointer list-none transition-colors duration-200">
+                <div class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-5xl capitalize">
+                    <div class="grid grid-cols-[36px_1fr] sm:grid-cols-[60px_1fr] xl:grid-cols-[80px_1fr]">
+                        <p class="me-2 sm:me-3 text-end">10.</p>
                         <p>Branding <span class="text-primary accordion-title"><i>design</i></span></p>
                     </div>
                 </div>
-                <span class="transition group-open:rotate-180 rounded-full bg-primary p-2">
-                    <svg fill="none" height="24" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24">
+                <span class="transition group-open:rotate-180 rounded-full bg-primary p-1.5 sm:p-2 shrink-0">
+                    <svg fill="none" height="18" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="18" class="sm:h-6 sm:w-6">
                     <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </span>
                 </summary>
-                <div class="p-4 ps-15 leading-relaxed transition-all ease-in-out">
+                <div class="p-3 sm:p-4 ps-8 sm:ps-12 xl:ps-15 text-sm sm:text-base leading-relaxed transition-all ease-in-out">
                     <p>A strong brand creates recognition, trust, and consistency across every customer interaction. I develop thoughtful brand identities that reflect your business values, connect with your audience, and position you confidently within your market.</p>
                 </div>
             </details>
@@ -421,99 +442,99 @@
      </section>
 
      <!-- Testimonials -->
-     <section id="testimonials" class="pb-[150px] relative">
-        <div class="mx-[50px] xl:mx-[120px] pt-[50px] xl:pt-[150px] lg:pt-[80px]">
-            <h2 class="text-5xl inline-block border-b-1 border-grey pb-5 mb-20 mb-10">Client Love</h2>
-            <div class="grid xl:grid-cols-3 lg:grid-cols-2 gap-10">
-                <div class="testimonial-block xl:p-10 rounded-xl testimonial-shadow flex justify-between flex-col">
+     <section id="testimonials" class="pb-16 sm:pb-24 xl:pb-[150px] relative">
+        <div class="mx-6 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-[120px] pt-10 sm:pt-14 md:pt-20 lg:pt-[80px] xl:pt-[150px]">
+            <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl inline-block border-b-1 border-grey pb-3 sm:pb-4 xl:pb-5 mb-6 sm:mb-8 md:mb-12 xl:mb-20">Client Love</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 xl:gap-10">
+                <div class="testimonial-block p-6 sm:p-8 xl:p-10 rounded-xl testimonial-shadow flex justify-between flex-col">
                     <div>
-                    <svg class="block" width="40" height="30" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="block w-8 h-6 sm:w-10 sm:h-[30px]" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M28.1634 15.1212C30.8523 14.0095 33.4421 14.3332 35.8431 15.8554C39.4867 18.1669 40.3022 22.8739 37.9521 26.6717C35.799 30.1514 31.8097 30.4269 29.1525 29.6279C25.9745 28.6733 24.0955 26.3549 23.0087 23.4084C21.47 19.2372 21.846 15.0798 23.6878 11.0726C25.7307 6.62592 29.1208 3.43831 33.3209 1.0483C33.9614 0.684631 34.6268 0.359535 35.3183 0C35.9878 0.964271 36.6407 1.90512 37.3143 2.87766C36.1032 3.5459 34.9478 4.3106 33.8595 5.16436C30.6733 7.72794 28.6249 10.95 28.0973 15.0619C28.0656 15.1046 28.0532 15.1487 28.1055 15.1831C28.1124 15.1859 28.1441 15.1432 28.1634 15.1212Z" fill="#A60664"/>
                         <path d="M13.2862 0.0219727L15.263 2.87897C10.3521 5.60235 6.81185 9.34097 6.01839 15.1459C8.96768 13.9681 11.7283 14.3414 14.234 16.1652C17.5318 18.5649 18.1544 23.0805 15.876 26.6896C13.9295 29.7711 10.1468 30.6307 6.85455 29.5548C4.04439 28.636 2.3087 26.5725 1.18601 23.9827C-0.392638 20.3461 -0.303098 16.6019 0.910506 12.8909C2.31283 8.62052 5.08442 5.35026 8.65773 2.71504C10.1019 1.65754 11.6532 0.754881 13.2862 0.0219727Z" fill="#A60664"/>
                         <path d="M28.1633 15.1213C28.144 15.1433 28.1124 15.186 28.1082 15.1832C28.0559 15.1488 28.0683 15.1047 28.1 15.062C28.1221 15.0807 28.1432 15.1004 28.1633 15.1213Z" fill="#FEFEFE"/>
                     </svg>
-                    <p class="mt-6 text-md">Lana has been amazing since she came onboard. As a small business owner wearing many hats I struggled for years with fresh ideas or maintaining any consistency with my social channels. Lana's been a breath of fresh air bringing new exciting content ideas and ensuring that our socials are now receiving the attention they needed. She was quick to learn about not only my business but our entire industry. Highly recommend LMR Socials to any business!</p>
+                    <p class="mt-4 sm:mt-6 text-sm sm:text-md">Lana has been amazing since she came onboard. As a small business owner wearing many hats I struggled for years with fresh ideas or maintaining any consistency with my social channels. Lana's been a breath of fresh air bringing new exciting content ideas and ensuring that our socials are now receiving the attention they needed. She was quick to learn about not only my business but our entire industry. Highly recommend LMR Socials to any business!</p>
                     </div>
-                    <h3 class="xl:text-3xl lg:text-xl border-t-1 border-grey mt-8 pt-5 flex items-center justify-start">
-                        <span>Sam Burke</span> <img src="img/testimonial/logo-sbe.png" alt="Sam burke" class="inline ml-3" />
+                    <h3 class="text-lg sm:text-xl xl:text-3xl border-t-1 border-grey mt-6 sm:mt-8 pt-4 sm:pt-5 flex items-center justify-start">
+                        <span>Sam Burke</span> <img src="img/testimonial/logo-sbe.png" alt="Sam burke" class="inline ml-3 h-6 sm:h-auto" />
                     </h3>
                 </div>
-                <div class="testimonial-block p-10 rounded-xl testimonial-shadow flex justify-between flex-col">
+                <div class="testimonial-block p-6 sm:p-8 xl:p-10 rounded-xl testimonial-shadow flex justify-between flex-col">
                     <div>
-                    <svg class="block" width="40" height="30" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="block w-8 h-6 sm:w-10 sm:h-[30px]" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M28.1634 15.1212C30.8523 14.0095 33.4421 14.3332 35.8431 15.8554C39.4867 18.1669 40.3022 22.8739 37.9521 26.6717C35.799 30.1514 31.8097 30.4269 29.1525 29.6279C25.9745 28.6733 24.0955 26.3549 23.0087 23.4084C21.47 19.2372 21.846 15.0798 23.6878 11.0726C25.7307 6.62592 29.1208 3.43831 33.3209 1.0483C33.9614 0.684631 34.6268 0.359535 35.3183 0C35.9878 0.964271 36.6407 1.90512 37.3143 2.87766C36.1032 3.5459 34.9478 4.3106 33.8595 5.16436C30.6733 7.72794 28.6249 10.95 28.0973 15.0619C28.0656 15.1046 28.0532 15.1487 28.1055 15.1831C28.1124 15.1859 28.1441 15.1432 28.1634 15.1212Z" fill="#A60664"/>
                         <path d="M13.2862 0.0219727L15.263 2.87897C10.3521 5.60235 6.81185 9.34097 6.01839 15.1459C8.96768 13.9681 11.7283 14.3414 14.234 16.1652C17.5318 18.5649 18.1544 23.0805 15.876 26.6896C13.9295 29.7711 10.1468 30.6307 6.85455 29.5548C4.04439 28.636 2.3087 26.5725 1.18601 23.9827C-0.392638 20.3461 -0.303098 16.6019 0.910506 12.8909C2.31283 8.62052 5.08442 5.35026 8.65773 2.71504C10.1019 1.65754 11.6532 0.754881 13.2862 0.0219727Z" fill="#A60664"/>
                         <path d="M28.1633 15.1213C28.144 15.1433 28.1124 15.186 28.1082 15.1832C28.0559 15.1488 28.0683 15.1047 28.1 15.062C28.1221 15.0807 28.1432 15.1004 28.1633 15.1213Z" fill="#FEFEFE"/>
                     </svg>
                     <div>
-                        <p class="mt-6 text-md">Lana has been such a huge help with my marketing assets and social media. It's hard to get in front of the camera and record yourself, and Lana made it so simple and streamlined. She always comes prepared with a run sheet that flows and it is easy to go from one video to the next. Her personality is warm and encouraging and the quality of her photos and videos are so good as well.</p>
-                        <p class="mt-3 text-md">It's taken so much of a mental load off of me to have good content batched. Definitely recommend using LMR Socials!</p>
+                        <p class="mt-4 sm:mt-6 text-sm sm:text-md">Lana has been such a huge help with my marketing assets and social media. It's hard to get in front of the camera and record yourself, and Lana made it so simple and streamlined. She always comes prepared with a run sheet that flows and it is easy to go from one video to the next. Her personality is warm and encouraging and the quality of her photos and videos are so good as well.</p>
+                        <p class="mt-3 text-sm sm:text-md">It's taken so much of a mental load off of me to have good content batched. Definitely recommend using LMR Socials!</p>
                     </div>
                     </div>
-                    <h3 class="xl:text-3xl lg:text-xl border-t-1 border-grey mt-8 pt-5 flex items-center justify-start">
-                        <span>Liv Mauri</span> <img src="img/testimonial/logo-skin-ethos.png" alt="Sam burke" class="inline ml-3" />
+                    <h3 class="text-lg sm:text-xl xl:text-3xl border-t-1 border-grey mt-6 sm:mt-8 pt-4 sm:pt-5 flex items-center justify-start">
+                        <span>Liv Mauri</span> <img src="img/testimonial/logo-skin-ethos.png" alt="Sam burke" class="inline ml-3 h-6 sm:h-auto" />
                     </h3>
                 </div>
-                <div class="testimonial-block p-10 rounded-xl testimonial-shadow flex justify-between flex-col">
+                <div class="testimonial-block p-6 sm:p-8 xl:p-10 rounded-xl testimonial-shadow flex justify-between flex-col">
                     <div>
-                    <svg class="block" width="40" height="30" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="block w-8 h-6 sm:w-10 sm:h-[30px]" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M28.1634 15.1212C30.8523 14.0095 33.4421 14.3332 35.8431 15.8554C39.4867 18.1669 40.3022 22.8739 37.9521 26.6717C35.799 30.1514 31.8097 30.4269 29.1525 29.6279C25.9745 28.6733 24.0955 26.3549 23.0087 23.4084C21.47 19.2372 21.846 15.0798 23.6878 11.0726C25.7307 6.62592 29.1208 3.43831 33.3209 1.0483C33.9614 0.684631 34.6268 0.359535 35.3183 0C35.9878 0.964271 36.6407 1.90512 37.3143 2.87766C36.1032 3.5459 34.9478 4.3106 33.8595 5.16436C30.6733 7.72794 28.6249 10.95 28.0973 15.0619C28.0656 15.1046 28.0532 15.1487 28.1055 15.1831C28.1124 15.1859 28.1441 15.1432 28.1634 15.1212Z" fill="#A60664"/>
                         <path d="M13.2862 0.0219727L15.263 2.87897C10.3521 5.60235 6.81185 9.34097 6.01839 15.1459C8.96768 13.9681 11.7283 14.3414 14.234 16.1652C17.5318 18.5649 18.1544 23.0805 15.876 26.6896C13.9295 29.7711 10.1468 30.6307 6.85455 29.5548C4.04439 28.636 2.3087 26.5725 1.18601 23.9827C-0.392638 20.3461 -0.303098 16.6019 0.910506 12.8909C2.31283 8.62052 5.08442 5.35026 8.65773 2.71504C10.1019 1.65754 11.6532 0.754881 13.2862 0.0219727Z" fill="#A60664"/>
                         <path d="M28.1633 15.1213C28.144 15.1433 28.1124 15.186 28.1082 15.1832C28.0559 15.1488 28.0683 15.1047 28.1 15.062C28.1221 15.0807 28.1432 15.1004 28.1633 15.1213Z" fill="#FEFEFE"/>
                     </svg>
                     <div>
-                        <p class="mt-6 text-md">Lana is highly organised, professional and an absolute pleasure to work with. She takes the time to research, plan and prepare everything meticulously, which makes the whole process feel smooth and well thought out.</p>
-                        <p class="mt-3 text-md">Talking in front of the camera was nerve-wracking for me at first, but Lana made it feel easy. She helped me feel comfortable, confident and natural when speaking about my business. I really appreciated her guidance and support, and I would highly recommend working with her.</p>
+                        <p class="mt-4 sm:mt-6 text-sm sm:text-md">Lana is highly organised, professional and an absolute pleasure to work with. She takes the time to research, plan and prepare everything meticulously, which makes the whole process feel smooth and well thought out.</p>
+                        <p class="mt-3 text-sm sm:text-md">Talking in front of the camera was nerve-wracking for me at first, but Lana made it feel easy. She helped me feel comfortable, confident and natural when speaking about my business. I really appreciated her guidance and support, and I would highly recommend working with her.</p>
                     </div>
                     </div>
-                    <h3 class="xl:text-3xl lg:text-xl border-t-1 border-grey mt-8 pt-5 flex items-center justify-start">
-                        <span>Jo Smith</span> <img src="img/testimonial/logo-fast-print.png" alt="Sam burke" class="inline ml-3" />
+                    <h3 class="text-lg sm:text-xl xl:text-3xl border-t-1 border-grey mt-6 sm:mt-8 pt-4 sm:pt-5 flex items-center justify-start">
+                        <span>Jo Smith</span> <img src="img/testimonial/logo-fast-print.png" alt="Sam burke" class="inline ml-3 h-6 sm:h-auto" />
                     </h3>
                 </div>
-                <div class="testimonial-block p-10 rounded-xl testimonial-shadow flex justify-between flex-col">
+                <div class="testimonial-block p-6 sm:p-8 xl:p-10 rounded-xl testimonial-shadow flex justify-between flex-col">
                     <div>
-                    <svg class="block" width="40" height="30" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="block w-8 h-6 sm:w-10 sm:h-[30px]" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M28.1634 15.1212C30.8523 14.0095 33.4421 14.3332 35.8431 15.8554C39.4867 18.1669 40.3022 22.8739 37.9521 26.6717C35.799 30.1514 31.8097 30.4269 29.1525 29.6279C25.9745 28.6733 24.0955 26.3549 23.0087 23.4084C21.47 19.2372 21.846 15.0798 23.6878 11.0726C25.7307 6.62592 29.1208 3.43831 33.3209 1.0483C33.9614 0.684631 34.6268 0.359535 35.3183 0C35.9878 0.964271 36.6407 1.90512 37.3143 2.87766C36.1032 3.5459 34.9478 4.3106 33.8595 5.16436C30.6733 7.72794 28.6249 10.95 28.0973 15.0619C28.0656 15.1046 28.0532 15.1487 28.1055 15.1831C28.1124 15.1859 28.1441 15.1432 28.1634 15.1212Z" fill="#A60664"/>
                         <path d="M13.2862 0.0219727L15.263 2.87897C10.3521 5.60235 6.81185 9.34097 6.01839 15.1459C8.96768 13.9681 11.7283 14.3414 14.234 16.1652C17.5318 18.5649 18.1544 23.0805 15.876 26.6896C13.9295 29.7711 10.1468 30.6307 6.85455 29.5548C4.04439 28.636 2.3087 26.5725 1.18601 23.9827C-0.392638 20.3461 -0.303098 16.6019 0.910506 12.8909C2.31283 8.62052 5.08442 5.35026 8.65773 2.71504C10.1019 1.65754 11.6532 0.754881 13.2862 0.0219727Z" fill="#A60664"/>
                         <path d="M28.1633 15.1213C28.144 15.1433 28.1124 15.186 28.1082 15.1832C28.0559 15.1488 28.0683 15.1047 28.1 15.062C28.1221 15.0807 28.1432 15.1004 28.1633 15.1213Z" fill="#FEFEFE"/>
                     </svg>
                     <div>
-                        <p class="mt-6 text-md">Lana has been such a supportive and reliable part of our business. She understands and appreciates our brand, communicates clearly, and always delivers work that feels thoughtful and on‑point. She is incredibly attentive and consistently available, and her responsiveness gives me a real sense of clarity. Nothing is ever too hard for Lana!</p>
-                        <p class="mt-3 text-md">Lana's work ethics impress me most and we look forward to achieving many milestones with LMR Socials!!!!!!</p>
+                        <p class="mt-4 sm:mt-6 text-sm sm:text-md">Lana has been such a supportive and reliable part of our business. She understands and appreciates our brand, communicates clearly, and always delivers work that feels thoughtful and on‑point. She is incredibly attentive and consistently available, and her responsiveness gives me a real sense of clarity. Nothing is ever too hard for Lana!</p>
+                        <p class="mt-3 text-sm sm:text-md">Lana's work ethics impress me most and we look forward to achieving many milestones with LMR Socials!!!!!!</p>
                     </div>
                     </div>
-                    <h3 class="xl:text-3xl lg:text-xl border-t-1 border-grey mt-8 pt-5 flex items-center justify-start">
-                        <span>Narenay Bakalian</span> <img src="img/testimonial/logo-bb-designer-jewellers.png" alt="Sam burke" class="inline ml-3" />
+                    <h3 class="text-lg sm:text-xl xl:text-3xl border-t-1 border-grey mt-6 sm:mt-8 pt-4 sm:pt-5 flex items-center justify-start">
+                        <span>Narenay Bakalian</span> <img src="img/testimonial/logo-bb-designer-jewellers.png" alt="Sam burke" class="inline ml-3 h-6 sm:h-auto" />
                     </h3>
                 </div>
-                <div class="testimonial-block p-10 rounded-xl testimonial-shadow flex justify-between flex-col">
+                <div class="testimonial-block p-6 sm:p-8 xl:p-10 rounded-xl testimonial-shadow flex justify-between flex-col">
                     <div>
-                    <svg class="block" width="40" height="30" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="block w-8 h-6 sm:w-10 sm:h-[30px]" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M28.1634 15.1212C30.8523 14.0095 33.4421 14.3332 35.8431 15.8554C39.4867 18.1669 40.3022 22.8739 37.9521 26.6717C35.799 30.1514 31.8097 30.4269 29.1525 29.6279C25.9745 28.6733 24.0955 26.3549 23.0087 23.4084C21.47 19.2372 21.846 15.0798 23.6878 11.0726C25.7307 6.62592 29.1208 3.43831 33.3209 1.0483C33.9614 0.684631 34.6268 0.359535 35.3183 0C35.9878 0.964271 36.6407 1.90512 37.3143 2.87766C36.1032 3.5459 34.9478 4.3106 33.8595 5.16436C30.6733 7.72794 28.6249 10.95 28.0973 15.0619C28.0656 15.1046 28.0532 15.1487 28.1055 15.1831C28.1124 15.1859 28.1441 15.1432 28.1634 15.1212Z" fill="#A60664"/>
                         <path d="M13.2862 0.0219727L15.263 2.87897C10.3521 5.60235 6.81185 9.34097 6.01839 15.1459C8.96768 13.9681 11.7283 14.3414 14.234 16.1652C17.5318 18.5649 18.1544 23.0805 15.876 26.6896C13.9295 29.7711 10.1468 30.6307 6.85455 29.5548C4.04439 28.636 2.3087 26.5725 1.18601 23.9827C-0.392638 20.3461 -0.303098 16.6019 0.910506 12.8909C2.31283 8.62052 5.08442 5.35026 8.65773 2.71504C10.1019 1.65754 11.6532 0.754881 13.2862 0.0219727Z" fill="#A60664"/>
                         <path d="M28.1633 15.1213C28.144 15.1433 28.1124 15.186 28.1082 15.1832C28.0559 15.1488 28.0683 15.1047 28.1 15.062C28.1221 15.0807 28.1432 15.1004 28.1633 15.1213Z" fill="#FEFEFE"/>
                     </svg>
                     <div>
-                        <p class="mt-6 text-md">We have worked with Lana to build out our social media strategy. She has proven to be really friendly, engaged and highly efficient. Her reporting and creativity have helped enormously and we'd have no hesitation in recommending her.</p>
+                        <p class="mt-4 sm:mt-6 text-sm sm:text-md">We have worked with Lana to build out our social media strategy. She has proven to be really friendly, engaged and highly efficient. Her reporting and creativity have helped enormously and we'd have no hesitation in recommending her.</p>
                     </div>
                     </div>
-                    <h3 class="xl:text-3xl lg:text-xl border-t-1 border-grey mt-8 pt-5 flex items-center justify-start">
-                        <span>Damion Wright</span> <img src="img/testimonial/logo-roadhow.png" alt="Sam burke" class="inline ml-3" />
+                    <h3 class="text-lg sm:text-xl xl:text-3xl border-t-1 border-grey mt-6 sm:mt-8 pt-4 sm:pt-5 flex items-center justify-start">
+                        <span>Damion Wright</span> <img src="img/testimonial/logo-roadhow.png" alt="Sam burke" class="inline ml-3 h-6 sm:h-auto" />
                     </h3>
                 </div>
-                <div class="testimonial-block p-10 rounded-xl testimonial-shadow flex justify-between flex-col">
+                <div class="testimonial-block p-6 sm:p-8 xl:p-10 rounded-xl testimonial-shadow flex justify-between flex-col">
                     <div>
-                    <svg class="block" width="40" height="30" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="block w-8 h-6 sm:w-10 sm:h-[30px]" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M28.1634 15.1212C30.8523 14.0095 33.4421 14.3332 35.8431 15.8554C39.4867 18.1669 40.3022 22.8739 37.9521 26.6717C35.799 30.1514 31.8097 30.4269 29.1525 29.6279C25.9745 28.6733 24.0955 26.3549 23.0087 23.4084C21.47 19.2372 21.846 15.0798 23.6878 11.0726C25.7307 6.62592 29.1208 3.43831 33.3209 1.0483C33.9614 0.684631 34.6268 0.359535 35.3183 0C35.9878 0.964271 36.6407 1.90512 37.3143 2.87766C36.1032 3.5459 34.9478 4.3106 33.8595 5.16436C30.6733 7.72794 28.6249 10.95 28.0973 15.0619C28.0656 15.1046 28.0532 15.1487 28.1055 15.1831C28.1124 15.1859 28.1441 15.1432 28.1634 15.1212Z" fill="#A60664"/>
                         <path d="M13.2862 0.0219727L15.263 2.87897C10.3521 5.60235 6.81185 9.34097 6.01839 15.1459C8.96768 13.9681 11.7283 14.3414 14.234 16.1652C17.5318 18.5649 18.1544 23.0805 15.876 26.6896C13.9295 29.7711 10.1468 30.6307 6.85455 29.5548C4.04439 28.636 2.3087 26.5725 1.18601 23.9827C-0.392638 20.3461 -0.303098 16.6019 0.910506 12.8909C2.31283 8.62052 5.08442 5.35026 8.65773 2.71504C10.1019 1.65754 11.6532 0.754881 13.2862 0.0219727Z" fill="#A60664"/>
                         <path d="M28.1633 15.1213C28.144 15.1433 28.1124 15.186 28.1082 15.1832C28.0559 15.1488 28.0683 15.1047 28.1 15.062C28.1221 15.0807 28.1432 15.1004 28.1633 15.1213Z" fill="#FEFEFE"/>
                     </svg>
                     <div>
-                        <p class="mt-6 text-md">We worked with Lana to capture photos and videos for our STRONG Pilates Alexandria Open Day, and she was fantastic to collaborate with. She made the entire process easy and seamless, and delivered great content super quickly. Overall, she was a joy to work with and we’d happily work with her again!</p>
+                        <p class="mt-4 sm:mt-6 text-sm sm:text-md">We worked with Lana to capture photos and videos for our STRONG Pilates Alexandria Open Day, and she was fantastic to collaborate with. She made the entire process easy and seamless, and delivered great content super quickly. Overall, she was a joy to work with and we’d happily work with her again!</p>
                     </div>
                     </div>
-                    <h3 class="xl:text-3xl lg:text-xl border-t-1 border-grey mt-8 pt-5 flex items-center justify-start">
-                        <span>Zoe Hille</span> <img src="img/testimonial/logo-strong.png" alt="Sam burke" class="inline ml-3" />
+                    <h3 class="text-lg sm:text-xl xl:text-3xl border-t-1 border-grey mt-6 sm:mt-8 pt-4 sm:pt-5 flex items-center justify-start">
+                        <span>Zoe Hille</span> <img src="img/testimonial/logo-strong.png" alt="Sam burke" class="inline ml-3 h-6 sm:h-auto" />
                     </h3>
                 </div>
             </div>
@@ -522,65 +543,65 @@
 
      <!-- Getting Started -->
     <section class="relative">
-        <div class="mx-[50px] xl:mx-[120px] pt-[50px] xl:pt-[150px] lg:pt-[80px]">
-            <h2 class="text-xl xl:text-5xl lg:text-2xl inline-block border-b-1 border-grey pb-5 mb-20 lg:mb-10">Getting Started</h2>
-            <div class="grid xl:grid-cols-4 lg:grid-cols-2 gap-10">
-                <div class="bg-primary rounded-xl text-white flex items-center justify-center relative py-20 px-10">
-                    <span class="absolute top-2 left-4">01.</span>
+        <div class="mx-6 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-[120px] pt-10 sm:pt-14 md:pt-20 lg:pt-[80px] xl:pt-[150px]">
+            <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl inline-block border-b-1 border-grey pb-3 sm:pb-4 xl:pb-5 mb-6 sm:mb-8 md:mb-12 xl:mb-20">Getting Started</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8 xl:gap-10">
+                <div class="bg-primary rounded-xl text-white flex items-center justify-center relative py-12 sm:py-16 xl:py-20 px-6 sm:px-8 xl:px-10">
+                    <span class="absolute top-2 left-4 text-sm sm:text-base">01.</span>
                     <div class="text-center">
-                        <h4 class="text-3xl mb-5">Contact Me</h4>
-                        <p>Send me the details <br /> and I'll get back to you <br /> within 24 hours.</p>
+                        <h4 class="text-xl sm:text-2xl xl:text-3xl mb-3 sm:mb-4 xl:mb-5">Contact Me</h4>
+                        <p class="text-sm sm:text-base">Send me the details <br /> and I'll get back to you <br /> within 24 hours.</p>
                     </div>
                 </div>
-                <div class="bg-secondary rounded-xl text-white flex items-center justify-center relative py-20 px-10">
-                    <span class="absolute top-2 left-4">02.</span>
+                <div class="bg-secondary rounded-xl text-white flex items-center justify-center relative py-12 sm:py-16 xl:py-20 px-6 sm:px-8 xl:px-10">
+                    <span class="absolute top-2 left-4 text-sm sm:text-base">02.</span>
                     <div class="text-center">
-                        <h4 class="text-3xl mb-5">The Call</h4>
-                        <p>We’ll schedule a call <br /> to chat about brand <br /> and goals.</p>
+                        <h4 class="text-xl sm:text-2xl xl:text-3xl mb-3 sm:mb-4 xl:mb-5">The Call</h4>
+                        <p class="text-sm sm:text-base">We’ll schedule a call <br /> to chat about brand <br /> and goals.</p>
                     </div>
                 </div>
-                <div class="bg-primary rounded-xl text-white flex items-center justify-center relative py-20 px-10">
-                    <span class="absolute top-2 left-4">03.</span>
+                <div class="bg-primary rounded-xl text-white flex items-center justify-center relative py-12 sm:py-16 xl:py-20 px-6 sm:px-8 xl:px-10">
+                    <span class="absolute top-2 left-4 text-sm sm:text-base">03.</span>
                     <div class="text-center">
-                        <h4 class="text-3xl mb-5">The Proposal</h4>
-                        <p>Post-call, I’ll send you a <br /> bespoke proposal with <br /> packages and services.</p>
+                        <h4 class="text-xl sm:text-2xl xl:text-3xl mb-3 sm:mb-4 xl:mb-5">The Proposal</h4>
+                        <p class="text-sm sm:text-base">Post-call, I’ll send you a <br /> bespoke proposal with <br /> packages and services.</p>
                     </div>
                 </div>
-                <div class="bg-secondary rounded-xl text-white flex items-center justify-center relative py-20 px-10">
-                    <span class="absolute top-2 left-4">04.</span>
+                <div class="bg-secondary rounded-xl text-white flex items-center justify-center relative py-12 sm:py-16 xl:py-20 px-6 sm:px-8 xl:px-10">
+                    <span class="absolute top-2 left-4 text-sm sm:text-base">04.</span>
                     <div class="text-center">
-                        <h4 class="text-3xl mb-5">The Work</h4>
-                        <p>The research, <br /> strategy and <br /> planning begin!</p>
+                        <h4 class="text-xl sm:text-2xl xl:text-3xl mb-3 sm:mb-4 xl:mb-5">The Work</h4>
+                        <p class="text-sm sm:text-base">The research, <br /> strategy and <br /> planning begin!</p>
                     </div>
                 </div>
             </div>
-            <img src="/img/design.png" alt="Design" class="absolute xl:-top-[130px] right-0 lg:w-1/6" />
+            <img src="/img/design.png" alt="Design" class="absolute xl:-top-[130px] right-0 lg:w-1/6 hidden xl:block" />
         </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="xl:mx-[120px] py-[150px] lg:py-[80px]">
-        <h2 class="xl:text-5xl lg:text-2xl inline-block border-b-1 border-grey pb-5 mb-20 lg:mb-10">Contact</h2>
-        <div class="grid xl:grid-cols-3 lg:grid-cols-2 gap-10">
-            <div class="bg-primary rounded-xl text-white flex items-center justify-center relative py-20 px-10">
-                <span class="absolute top-2 left-4">01.</span>
+    <section id="contact" class="mx-6 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-[120px] py-16 sm:py-20 md:py-24 lg:py-[80px] xl:py-[150px]">
+        <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl inline-block border-b-1 border-grey pb-3 sm:pb-4 xl:pb-5 mb-6 sm:mb-8 md:mb-12 xl:mb-20">Contact</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 xl:gap-10">
+            <div class="bg-primary rounded-xl text-white flex items-center justify-center relative py-12 sm:py-16 xl:py-20 px-6 sm:px-8 xl:px-10">
+                <span class="absolute top-2 left-4 text-sm sm:text-base">01.</span>
                 <div class="text-center">
-                    <h4 class="text-3xl mb-5">Email Me</h4>
-                    <a href="mailto:Lana@lmrsocials.com">lana@lmrsocials.com</a>
+                    <h4 class="text-xl sm:text-2xl xl:text-3xl mb-3 sm:mb-4 xl:mb-5">Email Me</h4>
+                    <a href="mailto:Lana@lmrsocials.com" class="text-sm sm:text-base break-all">lana@lmrsocials.com</a>
                 </div>
             </div>
-            <div class="bg-secondary rounded-xl text-white flex items-center justify-center relative py-20 px-10">
-                <span class="absolute top-2 left-4">02.</span>
+            <div class="bg-secondary rounded-xl text-white flex items-center justify-center relative py-12 sm:py-16 xl:py-20 px-6 sm:px-8 xl:px-10">
+                <span class="absolute top-2 left-4 text-sm sm:text-base">02.</span>
                 <div class="text-center">
-                    <h4 class="text-3xl mb-5">Call Me</h4>
-                    <a href="tel:+61423060056">+61 423 060 056</a>
+                    <h4 class="text-xl sm:text-2xl xl:text-3xl mb-3 sm:mb-4 xl:mb-5">Call Me</h4>
+                    <a href="tel:+61423060056" class="text-sm sm:text-base">+61 423 060 056</a>
                 </div>
             </div>
-            <div class="bg-primary rounded-xl text-white flex items-center justify-center relative py-20 px-10">
-                <span class="absolute top-2 left-4">03.</span>
+            <div class="bg-primary rounded-xl text-white flex items-center justify-center relative py-12 sm:py-16 xl:py-20 px-6 sm:px-8 xl:px-10">
+                <span class="absolute top-2 left-4 text-sm sm:text-base">03.</span>
                 <div class="text-center">
-                    <h4 class="text-3xl mb-5">DM Me</h4>
-                    <a href="https://www.instagram.com/lmrsocials?igsi=MTEzNnh6ZGYzdjRm&utm_source=qr">@lmrsocials</a>
+                    <h4 class="text-xl sm:text-2xl xl:text-3xl mb-3 sm:mb-4 xl:mb-5">DM Me</h4>
+                    <a href="https://www.instagram.com/lmrsocials?igsi=MTEzNnh6ZGYzdjRm&utm_source=qr" class="text-sm sm:text-base">@lmrsocials</a>
                 </div>
             </div>
         </div>
@@ -588,20 +609,20 @@
 
     <!-- Footer -->
      <footer class="bg-primary py-6">
-        <div class="footer-main text-white">
-            <div class="grid xl:grid-cols-3 justify-center items-center text-center py-18">
-                <div class="border-e border-white">
-                    <h6 class="xl:text-3xl lg:text-2xl border-b inline-block pb-1 mb-5">Get in Touch</h6>
+        <div class="footer-main text-white px-6 sm:px-8 xl:px-0">
+            <div class="grid grid-cols-1 md:grid-cols-3 justify-center items-center text-center gap-8 md:gap-4 py-10 md:py-18">
+                <div class="border-b md:border-e md:border-b-0 border-white pb-8 md:pb-0">
+                    <h6 class="text-xl sm:text-2xl xl:text-3xl border-b inline-block pb-1 mb-4 sm:mb-5">Get in Touch</h6>
                     <div>
                         <a href="tel:+61423060056" class="inline-block pe-5">
-                            <svg width="30" height="30" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="24" height="24" class="sm:w-[30px] sm:h-[30px]" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M37.9415 49.9952C35.926 49.8002 33.8182 49.2315 31.7595 48.4619C26.3679 46.4449 21.6535 43.3159 17.3069 39.6019C11.9614 35.0335 7.44958 29.7595 4.00204 23.6117C2.15919 20.3264 0.761421 16.867 0.0885861 13.1336C-0.109394 12.0321 0.000756583 11.0853 0.661683 10.1386C2.94515 6.86375 5.43554 3.77646 8.37845 1.07023C8.71367 0.776074 9.06771 0.50408 9.43831 0.255982C9.98015 -0.126581 10.519 -0.0610849 11.0341 0.324455C11.406 0.608342 11.731 0.948914 11.9972 1.33371C14.2687 4.552 16.3765 7.87152 18.0691 11.4381C18.9622 13.3227 18.8714 13.671 17.298 15.0732C16.2143 16.0363 15.0487 16.9042 14.044 17.9581C13.9408 18.0457 13.8677 18.1636 13.8351 18.295C13.8025 18.4264 13.8121 18.5648 13.8624 18.6905C15.3628 23.7844 18.2402 27.9628 22.313 31.321C24.9582 33.5033 27.9041 35.16 31.2355 36.0844C31.5645 36.1738 31.7669 36.1395 32.0155 35.8984C32.9801 34.9635 33.8018 33.9096 34.6771 32.8929C36.2743 31.0307 36.569 30.9459 38.7915 32.0191C42.2076 33.699 45.4714 35.6723 48.5461 37.9169C50.3115 39.1866 50.3845 39.9264 48.9376 41.5118C46.0987 44.5892 42.8776 47.2906 39.3527 49.5501C38.9835 49.7853 38.6009 50.0383 37.9415 49.9952Z" fill="white"/>
                                 <path d="M26.748 3.55036V0.0611476C38.3515 -0.315461 49.9698 9.61034 49.9281 23.1861H46.4017C46.2826 17.8273 44.4248 13.1502 40.6111 9.3424C36.7974 5.53463 32.1605 3.66945 26.748 3.55036Z" fill="white"/>
                                 <path d="M26.7676 8.95851C34.3697 8.84538 41.0579 15.2418 40.9998 23.1848H37.4689C37.3826 20.2776 36.3852 17.7277 34.3057 15.6496C32.2262 13.5716 29.7105 12.5668 26.7676 12.4864V8.95851Z" fill="white"/>
                             </svg>
                         </a>
                         <a href="mailto:Lana@lmrsocials.com" class="inline-block">
-                            <svg width="72" height="30" viewBox="0 0 72 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="58" height="24" class="sm:w-[72px] sm:h-[30px]" viewBox="0 0 72 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M71.1078 44.8633L70.4433 46.5106L49.3516 24.9961L70.3998 3.53906C70.833 4.1479 70.833 4.76717 71.113 5.27859L71.1078 44.8633Z" fill="white"/>
                                 <path d="M3.61523 0.622817C4.45678 0.209367 5.38259 -0.00377188 6.32021 6.84274e-05H64.7892C65.7286 -0.00440616 66.656 0.210628 67.4976 0.628035C67.3237 0.812425 67.1723 0.97594 67.0106 1.14989C58.1019 10.0145 49.1932 18.8797 40.2845 27.7455C38.3449 29.6625 36.0992 30.3583 33.4464 29.4885C32.5228 29.1654 31.6884 28.629 31.011 27.9229C21.9342 18.9006 12.8602 9.87304 3.78919 0.840257C3.74918 0.798509 3.71091 0.739365 3.61523 0.622817Z" fill="white"/>
                                 <path d="M3.86719 49.4934L25.0685 27.8711C26.1366 28.9409 27.0847 29.9133 28.057 30.8631C31.6944 34.4239 36.7721 35.0501 41.0374 32.4739C41.8411 31.9678 42.5795 31.3649 43.2362 30.6787C44.132 29.7811 45.0244 28.8818 46.0194 27.8815L67.2208 49.5108C66.7667 49.7543 66.0205 49.9161 65.2481 49.984C64.9942 50.0066 64.7384 49.9996 64.4845 49.9996C45.2012 49.9996 25.9186 49.9996 6.63651 49.9996C5.59801 50.0048 4.58909 49.8674 3.86719 49.4934Z" fill="white"/>
@@ -610,14 +631,14 @@
                         </a>
                     </div>
                 </div>
-                <div class="border-e border-white">
-                    <img src="img/logo-white.png" alt="Logo" class="inline-block w-2/3" />
+                <div class="border-b md:border-e md:border-b-0 border-white pb-8 md:pb-0">
+                    <img src="img/logo-white.png" alt="Logo" class="inline-block w-1/2 sm:w-2/3" />
                 </div>
                 <div>
-                    <h6 class="xl:text-3xl lg:text-2xl border-b inline-block pb-1 mb-5">Connect</h6>
+                    <h6 class="text-xl sm:text-2xl xl:text-3xl border-b inline-block pb-1 mb-4 sm:mb-5">Connect</h6>
                     <div>
                         <a href="https://www.instagram.com/lmrsocials?igsi=MTEzNnh6ZGYzdjRm&utm_source=qr" class="inline-block pe-5">
-                            <svg width="30" height="30" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="24" height="24" class="sm:w-[30px] sm:h-[30px]" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M19.738 0H31.9409C32.1036 0.135239 32.2663 0.161699 32.4309 0H33.5089C33.6402 0.189139 33.8362 0.0852596 33.9989 0.0921196C35.8021 0.166599 37.6043 0.251859 39.3673 0.686976C43.8145 1.78457 46.9956 4.38155 48.7125 8.66706C49.6758 11.0739 49.8983 13.617 49.9061 16.1787C49.9231 21.9208 49.9231 27.6626 49.9061 33.404C49.9003 35.2249 49.8081 37.0457 49.424 38.8352C48.444 43.4 45.9176 46.731 41.584 48.5871C39.2585 49.5818 36.7821 49.8032 34.288 49.8826C29.0029 50.0522 23.7168 50.0032 18.4317 49.9502C15.8357 49.9248 13.226 49.9238 10.6731 49.3044C6.54243 48.3029 3.47407 45.9636 1.64149 42.0985C0.601713 39.9043 0.230298 37.5465 0.155819 35.1406C-0.0519396 28.4414 -0.0519396 21.7415 0.155819 15.0409C0.206779 13.4151 0.377298 11.7991 0.811434 10.2223C1.97861 5.98874 4.53541 2.97036 8.63178 1.31613C10.9034 0.391996 13.3093 0.175419 15.7377 0.0979993C15.8974 0.0930993 16.0954 0.195999 16.2277 0H18.1798C18.6874 0.156948 19.2305 0.156948 19.738 0ZM25.0084 45.4893C26.3255 45.4893 27.6436 45.503 28.9617 45.4893C31.8037 45.453 34.6643 45.5501 37.4877 45.0973C41.3096 44.4789 43.8576 42.3435 44.8856 38.5461C45.31 36.9781 45.3619 35.367 45.4119 33.7578C45.5657 28.7314 45.5266 23.7031 45.4707 18.6767C45.4482 16.6618 45.4217 14.644 45.1306 12.6399C44.5603 8.72978 42.1456 6.02304 38.3608 5.1087C36.5606 4.67359 34.7172 4.64713 32.8827 4.61087C28.507 4.52169 24.1304 4.52953 19.7508 4.57461C17.2479 4.60009 14.7332 4.52953 12.2597 4.99796C8.52495 5.70454 6.08575 7.85954 5.12634 11.5874C4.68632 13.3024 4.65888 15.0645 4.61086 16.8186C4.5011 20.8366 4.50699 24.8546 4.54521 28.8726C4.57167 31.6851 4.50503 34.5056 4.90192 37.3005C5.2802 39.9602 6.42287 42.1936 8.7239 43.7028C10.3899 44.7925 12.2773 45.1728 14.2266 45.3031C17.8182 45.5334 21.4148 45.4854 25.0084 45.4893Z" fill="white"/>
                                 <path d="M19.7398 0C19.2311 0.157757 18.6865 0.157757 18.1777 0H19.7398Z" fill="white"/>
                                 <path d="M32.4294 0C32.2668 0.161699 32.1041 0.135239 31.9395 0H32.4294Z" fill="white"/>
@@ -626,14 +647,14 @@
                             </svg>
                         </a>
                         <a href="https://www.tiktok.com/@lmrsocials?_r=1&_t=ZN-99EI5AD0qlK" class="inline-block">
-                            <svg width="44" height="30" viewBox="0 0 44 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="34" height="24" class="sm:w-[44px] sm:h-[30px]" viewBox="0 0 44 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M14.4411 49.9857C13.7695 49.7509 13.0548 49.7483 12.3649 49.6074C6.10499 48.3307 1.1492 43.1219 0.176299 36.8085C-1.08743 28.5597 4.57913 20.6891 12.7979 19.2598C14.3235 18.9877 15.8797 18.9307 17.4211 19.0902C17.6128 19.1098 17.8033 19.1502 18.0067 19.1841V27.4107C17.5816 27.3299 17.1773 27.2373 16.7678 27.1786C15.6857 27.0148 14.5807 27.0936 13.5328 27.4094C12.4849 27.7252 11.5203 28.2701 10.709 29.0045C9.89757 29.739 9.25967 30.6447 8.84144 31.6561C8.42321 32.6675 8.23511 33.7592 8.29076 34.8522C8.44204 38.5417 11.4833 41.6012 15.2445 41.8516C18.8961 42.0942 22.2948 39.4611 22.9573 35.8799C23.0554 35.2852 23.099 34.6828 23.0877 34.0802C23.0955 22.914 23.1025 11.7478 23.1086 0.581652C23.1086 0.387333 23.1281 0.190407 23.1386 0L31.2504 0.0104315C31.2817 0.401678 31.3104 0.792925 31.3456 1.18417C31.8294 6.40079 35.8684 10.9797 40.9964 12.1391C41.9503 12.3481 42.9229 12.4608 43.8994 12.4755V20.59C39.2044 20.5639 35.0311 19.1176 31.2647 16.3085C31.2647 16.5693 31.2647 16.7454 31.2647 16.9214C31.2821 22.6597 31.2987 28.398 31.3143 34.1363C31.3262 35.0328 31.2673 35.929 31.1382 36.8163C30.1197 43.3749 24.9057 48.6346 18.3771 49.7274C17.8124 49.8213 17.2281 49.7992 16.6817 50H16.1926C16.0417 49.9209 15.8739 49.8796 15.7036 49.8796C15.5332 49.8796 15.3654 49.9209 15.2145 50L14.4411 49.9857Z" fill="white"/>
                             </svg>
                         </a>
                     </div>
                 </div>
             </div>
-            <p class="text-center border-t pt-6 mt-6">&copy; 2026 LMR Socials. All Rights Reserved.</p>
+            <p class="text-center text-xs sm:text-sm border-t pt-4 sm:pt-6 mt-4 sm:mt-6">&copy; 2026 LMR Socials. All Rights Reserved.</p>
         </div>
      </footer>
 
@@ -642,7 +663,7 @@
      <script>
         var swiper = new Swiper('.mySwiper', {
         slidesPerView: 1,
-        spaceBetween: 0,
+        spaceBetween: 12,
         loop: true,
         autoplay: {
             delay: 1000,
@@ -651,7 +672,7 @@
             // when window width is >= 480px
             480: {
                 slidesPerView: 2,
-                spaceBetween: 20
+                spaceBetween: 16
             },
             // when window width is >= 640px
             640: {
@@ -670,8 +691,8 @@
       });
 
       var swiper = new Swiper('.clientSwipper', {
-        slidesPerView: 8,
-        spaceBetween: 0,
+        slidesPerView: 2,
+        spaceBetween: 16,
         loop: true,
         autoplay: {
             delay: 1000,
@@ -679,16 +700,16 @@
         breakpoints: {
             // when window width is >= 480px
             480: {
-                slidesPerView: 2,
-                spaceBetween: 20
+                slidesPerView: 3,
+                spaceBetween: 16
             },
             // when window width is >= 640px
             640: {
-                slidesPerView: 3,
+                slidesPerView: 4,
                 spaceBetween: 20
             },
             991: {
-                slidesPerView: 4,
+                slidesPerView: 6,
                 spaceBetween: 20
             },
             1360: {
@@ -698,17 +719,52 @@
         }
       });
 
-    //   Active nav links
-    var navlinks = document.querySelectorAll('.nav-link')
+    //   Active nav links (desktop + mobile stay in sync)
+    var navlinks = document.querySelectorAll('.nav-link, .nav-link-mobile');
 
     navlinks.forEach(link => {
         link.addEventListener("click", () => {
             navlinks.forEach(nl => {
-                nl.dataset.active = "false";    
-            })
-            link.dataset.active = "true";
-        })
-    })
+                nl.dataset.active = "false";
+            });
+            var href = link.getAttribute('href');
+            document.querySelectorAll('a[href="' + href + '"]').forEach(match => {
+                match.dataset.active = "true";
+            });
+            // Close mobile menu after choosing a section
+            closeMenu();
+        });
+    });
+
+    // Hamburger menu toggle
+    var menuBtn = document.getElementById('menuBtn');
+    var mobileMenu = document.getElementById('mobileMenu');
+    var barTop = document.getElementById('barTop');
+    var barMid = document.getElementById('barMid');
+    var barBot = document.getElementById('barBot');
+    var menuOpen = false;
+
+    function openMenu() {
+        menuOpen = true;
+        mobileMenu.classList.remove('hidden');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        barTop.style.transform = 'translateY(6px) rotate(45deg)';
+        barMid.style.opacity = '0';
+        barBot.style.transform = 'translateY(-6px) rotate(-45deg)';
+    }
+
+    function closeMenu() {
+        menuOpen = false;
+        mobileMenu.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        barTop.style.transform = 'none';
+        barMid.style.opacity = '1';
+        barBot.style.transform = 'none';
+    }
+
+    menuBtn.addEventListener('click', () => {
+        menuOpen ? closeMenu() : openMenu();
+    });
      </script>
 </body>
 </html>
